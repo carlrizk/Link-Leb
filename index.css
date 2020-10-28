@@ -1,0 +1,45 @@
+html,
+body,
+.view {
+    height: 100%;
+    background-image: linear-gradient(black, black), url('assets/background.jpeg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-blend-mode: saturation;
+}
+
+.mask {
+    background: linear-gradient(rgba(174, 30, 30, 0.6) 40%, rgba(174, 30, 30, 0.9));
+    position: fixed;
+}
+
+@media (min-width: 992px) {
+    .mask {
+        clip-path: polygon(0 0, 0 0, 100% 100%, 0 100%);
+    }
+}
+
+.container-fluid {
+    height: 100%;
+}
+
+.title {
+    font-weight: bolder;
+    -webkit-text-stroke: 3px #707070;
+}
+
+.header {
+    padding-top: 15%;
+}
+
+.btn-user {
+    margin: 10px 0px;
+    height: 75px;
+    border-radius: 18px;
+    font-weight: bold;
+}
+
+.links {
+    padding-top: 15px;
+}
