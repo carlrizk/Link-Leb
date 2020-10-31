@@ -1,7 +1,5 @@
-html,
-body,
 .view {
-    height: 100%;
+    margin: 0;
     background-image: linear-gradient(black, black), url('assets/background.jpeg');
     background-repeat: no-repeat;
     background-position: center center;
@@ -20,17 +18,9 @@ body,
     }
 }
 
-.container-fluid {
-    height: 100%;
-}
-
 .title {
     font-weight: bolder;
     -webkit-text-stroke: 3px #707070;
-}
-
-.header {
-    padding-top: 15%;
 }
 
 .btn-user {
@@ -38,8 +28,4 @@ body,
     height: 75px;
     border-radius: 18px;
     font-weight: bold;
-}
-
-.links {
-    padding-top: 15px;
 }
