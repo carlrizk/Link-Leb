@@ -7,41 +7,51 @@
 
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
 
+    <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="login.css">
 
     <title>Link-Leb | Login</title>
 </head>
 
 <body>
-    <div class="container h-100">
+    <div class="vh-100 d-flex flex-column">
 
-        <div class="row h-100 align-items-center">
-            <div class="col-12 col-md-6">
-                <div class="text-center">
-                    <img class="mb-4" src="assets/logo.png" alt="logo" width="100" height="100">
+        <nav class="navbar navbar-dark bg-primary">
+            <img src="./assets/logo.png" width="50" height="50">
+            <h2 class="mr-auto text-light pl-2 my-auto"> Link-Leb</h2>
+        </nav>
+
+        <div class="container flex-grow-1">
+
+            <div class="row h-100 align-items-center">
+                <div class="col-12 col-md-6">
+                    <div class="text-center">
+                        <img class="mb-2" src="assets/logo.png" alt="logo" width="100" height="100">
+                    </div>
+                    <h1 class="text-center text-primary"><b>Link-Leb</b></h1>
+                    <h6 class="text-center ">The platform that links Lebanon</h6>
+                    <p class="text-justify ">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit cum fugit quia fuga iure. Velit eos exercitationem tenetur neque corrupti modi dicta fugiat, possimus esse quisquam rem deserunt, error quos?
+                    </p>
                 </div>
-                <h1 class="text-center text-primary"><b>Link-Leb</b></h1>
-                <h6 class="text-center ">The platform that links Lebanon</h6>
-                <p class="text-muted text-center">&copy; 2020-2021</p>
-            </div>
 
-            <div class="col-12 col-md-6">
-                <form class="form-signin mx-auto">
-                    <div class="form-group">
-                        <h3 class="pb-3 text-center"><b>Login</b></h3>
-                    </div>
-                    <div class="form-group">
-                        <label for="inputEmail" class="sr-only">Email address</label>
-                        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-                    </div>
-                    <div class="form-group">
-                        <label for="inputPassword" class="sr-only">Password</label>
-                        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-                    </div>
-                    <div class="form-group">
-                        <button class="btn btn-primary btn-lg btn-block btn-login" type="submit">Login</button>
-                    </div>
-                </form>
+                <div class="col-12 col-md-6">
+                    <form class="form-signin p-3 mx-auto">
+                        <div class="form-group">
+                            <h3 class="pb-3 text-center"><b>Login</b></h3>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Username">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" placeholder="Password">
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-primary btn-lg btn-block btn-ll" type="submit">Login</button>
+                        </div>
+                    </form>
+                </div>
+
             </div>
 
         </div>
