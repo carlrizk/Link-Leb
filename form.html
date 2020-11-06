@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="form.css">
+
+    <title>Link-Leb | form</title>
+</head>
+
+<body>
+
+    <div class="view vh-100 d-flex flex-column">
+        <nav class="navbar navbar-light bg-primary">
+            <a class="navbar-brand" href="#">
+                <img src="logo.png" width="40" height="40" alt="40">
+                <div class="navbar-nav ml-auto"></div>
+                <a class="nav-link" href="#">Home</a>
+            </a>
+        </nav>
+        <div class="container">
+            <h5 class="text-center ">Fill out this form so we can Link you to Lebanon's helpers</h5>
+            <form>
+                <div class="form-row align-items-center">
+                    <div class="form-group col-sm-6">
+                        <label for="fname">First Name</label>
+                        <input class="form-control" type="text" id="fname" name="firstname" placeholder="Your name..">
+                    </div>
+                    <div class="form-group col-sm-6">
+                        <label for="lname">Last Name</label>
+                        <input class="form-control" type="text" id="lname" name="lastname" placeholder="Your last name..">
+                    </div>
+                </div>
+                <div class="form-row align-items-center">
+                    <div class="form-group col-sm-6">
+                        <label for="faname">Father Name</label>
+                        <input class="form-control" type="text" id="faname" name="fathername" placeholder="Your Father name..">
+                    </div>
+                    <div class="form-group col-sm-6">
+                        <label for="Moname">Mother Name</label>
+                        <input class="form-control" type="text" id="Moname" name="mothername" placeholder="Your Mother name..">
+                    </div>
+                </div>
+                <div class="form-row align-items-center">
+                    <div class="form-group col-sm-6">
+                        <label for="Gender">Gender</label>
+                        <select class="form-control form-control-sm-6">
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-sm-6">
+                        <label for="Date of Birth">Date of Birth</label>
+                        <input class="form-control form-control-sm-6" type="date" value="yyyy-mm-dd" id="date-birth">
+                    </div>
+                </div>
+                <div class="form-row align-items-center">
+
+                    <div class="form-group col-sm-6">
+                        <label for="tel-input">Telephone</label>
+                        <input class="form-control form-control-sm-6" type="tel" value="(+961)76-555-555" id="tel-input">
+                    </div>
+                    <div class="form-group col-sm-6">
+                        <label for="area">Area</label>
+                        <select class="form-control form-control-sm-6">
+                            <option value="Beirut">Beirut</option>
+                            <option value="Akkar">Akkar</option>
+                            <option value="Beqaa">Beqaa</option>
+                            <option value="MountLebanon">Mount Lebanon</option>
+                            <option value="Nabatieh">Nabatieh</option>
+                            <option value="NorthGovernate">North Governate</option>
+                            <option value="SouthGovernate">South Governate</option>
+                        </select>
+                    </div>
+
+                </div>
+                <div class="form-row align-items-center">
+                    <div class="form-group col-sm-12">
+                        <label for="Address">Address</label>
+                        <textarea class="form-control" id="address" name="Address" placeholder="Address" rows="3"></textarea>
+
+                    </div>
+                </div>
+
+
+        </div>
+
+        <button type="submit" class="btn btn-primary">Sign in</button>
+        </form>
+    </div>
+    </div>
+
+</body>
+
+</html>
