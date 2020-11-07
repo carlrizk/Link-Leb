@@ -1,0 +1,5 @@
+.form-signin {
+    max-width: 400px;
+    border: solid var(--primary);
+    border-radius: var(--border-radius);
+}
