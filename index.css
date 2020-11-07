@@ -1,5 +1,4 @@
 .view {
-    margin: 0;
     background-image: linear-gradient(black, black), url('assets/background.jpeg');
     background-repeat: no-repeat;
     background-position: center center;
@@ -8,7 +7,7 @@
 }
 
 .mask {
-    background: linear-gradient(rgba(174, 30, 30, 0.6) 40%, rgba(174, 30, 30, 0.9));
+    background: linear-gradient(rgba(174, 30, 30, 0.8) 40%, rgba(174, 30, 30, 0.9));
     position: fixed;
 }
 
@@ -16,16 +15,4 @@
     .mask {
         clip-path: polygon(0 0, 0 0, 100% 100%, 0 100%);
     }
-}
-
-.title {
-    font-weight: bolder;
-    -webkit-text-stroke: 3px #707070;
-}
-
-.btn-user {
-    margin: 10px 0px;
-    height: 75px;
-    border-radius: 18px;
-    font-weight: bold;
 }
