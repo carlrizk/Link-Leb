@@ -15,129 +15,127 @@
 <body>
 
     <div class="view vh-100 d-flex flex-column">
-        <nav class="navbar navbar-light bg-primary">
-            <a class="navbar-brand" href="#">
-                <img src="logo.png" width="40" height="40" alt="40">
-                <div class="navbar-nav ml-auto"></div>
-                <a class="nav-link" href="#">Home</a>
-            </a>
-        </nav>
+
         <div class="container">
-            <h5 class="text-center ">Fill out this form so we can Link you to Lebanon's helpers</h5>
-            <form>
-                <div class="form-row align-items-center">
-                    <div class="form-group col-sm-6">
-                        <label for="fname">First Name</label>
-                        <input class="form-control" type="text" id="fname" name="firstname" placeholder="Your name..">
-                    </div>
-                    <div class="form-group col-sm-6">
-                        <label for="lname">Last Name</label>
-                        <input class="form-control" type="text" id="lname" name="lastname" placeholder="Your last name..">
-                    </div>
+            <div class="row">
+                <div class="col">
+                    <h5 class="text-center ">Fill out this form so we can Link you to Lebanon's helpers</h5>
                 </div>
-                <div class="form-row align-items-center">
-                    <div class="form-group col-sm-6">
-                        <label for="faname">Father Name</label>
-                        <input class="form-control" type="text" id="faname" name="fathername" placeholder="Your Father name..">
-                    </div>
-                    <div class="form-group col-sm-6">
-                        <label for="Moname">Mother Name</label>
-                        <input class="form-control" type="text" id="Moname" name="mothername" placeholder="Your Mother name..">
-                    </div>
-                </div>
-                <div class="form-row align-items-center">
-                    <div class="form-group col-sm-6">
-                        <label for="Gender">Gender</label>
-                        <select class="form-control form-control-sm-6">
-                            <option value="Male">Male</option>
-                            <option value="Female">Female</option>
-                            <option value="Other">Other</option>
-                        </select>
-                    </div>
-                    <div class="form-group col-sm-6">
-                        <label for="Date of Birth">Date of Birth</label>
-                        <input class="form-control form-control-sm-6" type="date" value="yyyy-MM-dd" id="date-birth">
-                    </div>
-                </div>
-                <div class="form-row align-items-center">
+            </div>
 
-                    <div class="form-group col-sm-6">
-                        <label for="tel-input">Telephone</label>
-                        <input class="form-control form-control-sm-6" type="tel" value="(+961)76-555-555" id="tel-input">
-                    </div>
-                    <div class="form-group col-sm-6">
-                        <label for="area">Area</label>
-                        <select class="form-control form-control-sm-6">
-                            <option value="Beirut">Beirut</option>
-                            <option value="Akkar">Akkar</option>
-                            <option value="Beqaa">Beqaa</option>
-                            <option value="MountLebanon">Mount Lebanon</option>
-                            <option value="Nabatieh">Nabatieh</option>
-                            <option value="NorthGovernate">North Governate</option>
-                            <option value="SouthGovernate">South Governate</option>
-                        </select>
-                    </div>
+            <div class="row">
+                <div class="col">
+                    <form>
+                        <div class="form-row align-items-center">
+                            <div class="form-group col-sm-6">
+                                <label for="fname">First Name</label>
+                                <input class="form-control" type="text" id="fname" name="firstname" placeholder="Your name..">
+                            </div>
+                            <div class="form-group col-sm-6">
+                                <label for="lname">Last Name</label>
+                                <input class="form-control" type="text" id="lname" name="lastname" placeholder="Your last name..">
+                            </div>
+                        </div>
+                        <div class="form-row align-items-center">
+                            <div class="form-group col-sm-6">
+                                <label for="faname">Father Name</label>
+                                <input class="form-control" type="text" id="faname" name="fathername" placeholder="Your Father name..">
+                            </div>
+                            <div class="form-group col-sm-6">
+                                <label for="Moname">Mother Name</label>
+                                <input class="form-control" type="text" id="Moname" name="mothername" placeholder="Your Mother name..">
+                            </div>
+                        </div>
+                        <div class="form-row align-items-center">
+                            <div class="form-group col-sm-6">
+                                <label for="gender">Gender</label>
+                                <select class="form-control" id="gender">
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-sm-6">
+                                <label for="dateOfBirth">Date of Birth</label>
+                                <input class="form-control" type="date" value="yyyy-MM-dd" id="dateOfBirth">
+                            </div>
+                        </div>
+                        <div class="form-row align-items-center">
 
-                </div>
-                <div class="form-row align-items-center">
-                    <div class="form-group col-sm-12">
-                        <label for="Address">Address</label>
-                        <textarea class="form-control" id="address" name="Address" placeholder="Address" rows="3"></textarea>
+                            <div class="form-group col-sm-6">
+                                <label for="telInput">Telephone</label>
+                                <input class="form-control" type="tel" placeholder="(+961)76-555-555" id="telInput">
+                            </div>
+                            <div class="form-group col-sm-6">
+                                <label for="area">Area</label>
+                                <select class="form-control" id="area">
+                                    <option value="beirut">Beirut</option>
+                                    <option value="akkar">Akkar</option>
+                                    <option value="beqaa">Beqaa</option>
+                                    <option value="mountLebanon">Mount Lebanon</option>
+                                    <option value="nabatieh">Nabatieh</option>
+                                    <option value="northGovernate">North Governate</option>
+                                    <option value="southGovernate">South Governate</option>
+                                </select>
+                            </div>
 
-                    </div>
-                </div>
+                        </div>
+                        <div class="form-row align-items-center">
+                            <div class="form-group col-sm-12">
+                                <label for="address">Address</label>
+                                <textarea class="form-control" id="address" name="Address" placeholder="Address" rows="3"></textarea>
 
-
-
-
-                <div class="custom-control custom-checkbox">
-                    <h6>Select your needs</h6>
-
-                    <div class="form-row align-items-center">
-                        <div class="form-group col-sm-6">
-                            <input type="checkbox" class="checkbox-inline">
-                            <label class="form-check-label" for="Med">Medication</label>
-                            <input type="text" class="form-control" placeholder="Enter the Medication's Name">
+                            </div>
                         </div>
 
-                        <div class="form-group col-sm-6">
-                            <input type="checkbox" class="checkbox-inline">
-                            <label class="form-check-label" for="Food">Food</label>
-                            <input type="text" class="form-control" placeholder="For Specification">
+                        <div class="custom-control custom-checkbox">
+                            <h6>Select your needs</h6>
+
+                            <div class="form-row align-items-center">
+                                <div class="form-group col-sm-6">
+                                    <input type="checkbox" class="checkbox-inline">
+                                    <label class="form-check-label" for="Med">Medication</label>
+                                    <input type="text" class="form-control" placeholder="Enter the Medication's Name">
+                                </div>
+
+                                <div class="form-group col-sm-6">
+                                    <input type="checkbox" class="checkbox-inline">
+                                    <label class="form-check-label" for="Food">Food</label>
+                                    <input type="text" class="form-control" placeholder="For Specification">
+                                </div>
+                            </div>
+                            <div class="form-row align-items-center">
+                                <div class="form-group col-sm-6 ">
+                                    <input type="checkbox" class="checkbox-inline">
+                                    <label class="form-check-label" for="Renovation">Rennovation</label>
+                                    <input type="text" class="form-control" placeholder="Explain your Need">
+                                </div>
+
+                                <div class="form-group col-sm-6">
+                                    <input type="checkbox" class="checkbox-inline">
+                                    <label class="form-check-label" for="Other">Others</label>
+                                    <input type="text" class="form-control" placeholder="Specify">
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-row align-items-center">
-                        <div class="form-group col-sm-6 ">
-                            <input type="checkbox" class="checkbox-inline">
-                            <label class="form-check-label  " for="Renovation">Rennovation</label>
-                            <input type="text" class="form-control" placeholder="Explain your Need">
+
+                        <div class="form-row align-items-center">
+                            <div class="form-group col-sm-6">
+                                <label for="Doc">Upload any document to check your ID</label>
+                                <input type="file" class="form-control-file border">
+                            </div>
                         </div>
 
-                        <div class="form-group col-sm-6">
-                            <input type="checkbox" class="checkbox-inline">
-                            <label class="form-check-label" for="Other">Others</label>
-                            <input type="text" class="form-control" placeholder="Specify">
+                        <div class="form-row">
+                            <div class="form-group col-sm-3">
+                                <button class="btn btn-primary" type="submit">Submit form</button>
+                            </div>
                         </div>
-                    </div>
+
+                    </form>
                 </div>
+            </div>
 
-                <div class="form-row align-items-center">
-                    <div class="form-group col-sm-6">
-                        <label for="Doc">Upload any document to check your ID</label>
-                        <input type="file" class="form-control-file border">
-                    </div>
-                </div>
-
-
-
-
-                <div class="form-row">
-                    <div class="form-group col-sm-3">
-                        <button class="btn btn-primary" type="submit">Submit form</button>
-                    </div>
-                </div>
-
-            </form>
         </div>
 
     </div>
