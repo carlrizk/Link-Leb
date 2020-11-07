@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="form.css">
+
+    <title>Link-Leb | form</title>
+</head>
+
+<body>
+
+    <div class="view vh-100 d-flex flex-column">
+
+        <nav class="navbar navbar-dark bg-primary">
+            <a href="./index.html" class="navbar-brand text-decoration-none py-0">
+                <img src="./assets/logo.png" width="50" height="50" alt="logo">
+                <h2 class="text-light ml-2 d-inline-block align-top mt-1">Link-Leb</h2>
+            </a>
+        </nav>
+
+        <div class="container">
+            <div class="row my-4">
+                <div class="col">
+                    <h4 class="text-center">Fill out this form so we can Link you to Lebanon's helpers</h4>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <form>
+                        <div class="card mb-4">
+                            <div class="card-body">
+
+                                <h5 class="card-title">Personal Information</h5>
+
+                                <div class="form-row align-items-center">
+                                    <div class="form-group col-sm-6">
+                                        <label for="fname">First Name</label>
+                                        <input class="form-control" type="text" id="fname" name="firstname" placeholder="Your name..">
+                                    </div>
+                                    <div class="form-group col-sm-6">
+                                        <label for="lname">Last Name</label>
+                                        <input class="form-control" type="text" id="lname" name="lastname" placeholder="Your last name..">
+                                    </div>
+                                </div>
+                                <div class="form-row align-items-center">
+                                    <div class="form-group col-sm-6">
+                                        <label for="faname">Father Name</label>
+                                        <input class="form-control" type="text" id="faname" name="fathername" placeholder="Your Father name..">
+                                    </div>
+                                    <div class="form-group col-sm-6">
+                                        <label for="Moname">Mother Name</label>
+                                        <input class="form-control" type="text" id="Moname" name="mothername" placeholder="Your Mother name..">
+                                    </div>
+                                </div>
+                                <div class="form-row align-items-center">
+                                    <div class="form-group col-sm-6">
+                                        <label for="gender">Gender</label>
+                                        <select class="form-control" id="gender">
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                </select>
+                                    </div>
+                                    <div class="form-group col-sm-6">
+                                        <label for="dateOfBirth">Date of Birth</label>
+                                        <input class="form-control" type="date" id="dateOfBirth">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card mb-4">
+                            <div class="card-body">
+
+                                <h5 class="card-title">Contact & Address</h5>
+
+                                <div class="form-row align-items-center">
+                                    <div class="form-group col-sm-6">
+                                        <label for="telInput">Telephone</label>
+                                        <input class="form-control" type="tel" placeholder="(+961)76-555-555" id="telInput">
+                                    </div>
+                                    <div class="form-group col-sm-6">
+                                        <label for="area">Area</label>
+                                        <select class="form-control" id="area">
+                                            <option value="beirut">Beirut</option>
+                                            <option value="akkar">Akkar</option>
+                                            <option value="beqaa">Beqaa</option>
+                                            <option value="mountLebanon">Mount Lebanon</option>
+                                            <option value="nabatieh">Nabatieh</option>
+                                            <option value="northGovernate">North Governate</option>
+                                            <option value="southGovernate">South Governate</option>
+                                        </select>
+                                    </div>
+
+                                </div>
+                                <div class="form-row align-items-center">
+                                    <div class="form-group col-sm-12">
+                                        <label for="address">Address</label>
+                                        <textarea class="form-control" id="address" name="Address" placeholder="Address" rows="3"></textarea>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <h5 class="card-title">Needs</h5>
+
+                                <div class="form-row align-items-center">
+                                    <div class="form-group col-sm-6">
+                                        <input type="checkbox" class="checkbox-inline" id="medication-checkbox" checked>
+                                        <label class="form-check-label" for="medication-checkbox">Medication</label>
+                                        <input type="text" class="form-control" placeholder="Medication comments..." id="medicationInput">
+                                    </div>
+
+                                    <div class="form-group col-sm-6">
+                                        <input type="checkbox" class="checkbox-inline" id="food-checkbox">
+                                        <label class="form-check-label" for="food-checkbox">Food</label>
+                                        <input type="text" class="form-control" placeholder="Food comments..." disabled>
+                                    </div>
+                                </div>
+                                <div class="form-row align-items-center">
+                                    <div class="form-group col-sm-6 ">
+                                        <input type="checkbox" class="checkbox-inline" id="renovation-checkbox">
+                                        <label class="form-check-label" for="renovation-checkbox">Renovation</label>
+                                        <input type="text" class="form-control" placeholder="Renovation comments..." disabled>
+                                    </div>
+
+                                    <div class="form-group col-sm-6">
+                                        <input type="checkbox" class="checkbox-inline" id="other-checkbox" checked>
+                                        <label class="form-check-label" for="other-checkbox">Other</label>
+                                        <input type="text" class="form-control" placeholder="Other comments...">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-auto ml-auto">
+                                <button class="btn btn-primary ml-auto" type="submit">Submit form</button>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
