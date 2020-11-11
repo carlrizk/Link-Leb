@@ -1,22 +1,30 @@
 {
-  "name": "link-leb",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/carlrizk/Link-Leb.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/carlrizk/Link-Leb/issues"
-  },
-  "homepage": "https://github.com/carlrizk/Link-Leb#readme",
-  "dependencies": {
-    "bootstrap": "^4.5.3"
-  }
+    "name": "link-leb",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "start": "gulp watch",
+        "build": "gulp"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/carlrizk/Link-Leb.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/carlrizk/Link-Leb/issues"
+    },
+    "homepage": "https://github.com/carlrizk/Link-Leb#readme",
+    "dependencies": {
+        "bootstrap": "^4.5.3"
+    },
+    "devDependencies": {
+        "browser-sync": "^2.26.13",
+        "del": "^6.0.0",
+        "gulp": "^4.0.2",
+        "gulp-imagemin": "^7.1.0",
+        "gulp-sass": "^4.1.0"
+    }
 }

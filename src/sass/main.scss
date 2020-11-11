@@ -1,0 +1,13 @@
+@import 'variables';
+
+@import "node_modules/bootstrap/scss/bootstrap";
+
+.btn-xl {
+    height: 4rem;
+}
+
+@for $i from 1 through 4 {
+    .border-width-#{$i} {
+        border-width: 0.125 * $i + rem;
+    }
+}

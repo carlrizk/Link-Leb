@@ -1,5 +1,7 @@
+@import 'variables';
+
 .view {
-    background-image: linear-gradient(black, black), url('assets/background.jpeg');
+    background-image: linear-gradient(black, black), url('../../assets/img/background.jpeg');
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -7,11 +9,11 @@
 }
 
 .mask {
-    background: linear-gradient(rgba(174, 30, 30, 0.8) 40%, rgba(174, 30, 30, 0.9));
+    background: linear-gradient(rgba($primary, 0.8) 40%, rgba($primary, 0.9));
     position: fixed;
 }
 
-@media (min-width: 992px) {
+@include media-breakpoint-up(lg) {
     .mask {
         clip-path: polygon(0 0, 0 0, 100% 100%, 0 100%);
     }

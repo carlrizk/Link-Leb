@@ -1,0 +1,17 @@
+$primary: #ad1e1e;
+$border-radius: 0.5rem;
+
+$btn-border-radius: $border-radius;
+$btn-border-radius-sm: $border-radius;
+$btn-border-radius-lg: $border-radius;
+
+$card-border-radius: $border-radius;
+$card-inner-border-radius: $border-radius;
+
+$input-border-radius: $border-radius;
+$input-border-radius-lg: $border-radius;
+$input-border-radius-sm: $border-radius;
+
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/mixins";
