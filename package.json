@@ -11,7 +11,7 @@
         "type": "git",
         "url": "git+https://github.com/carlrizk/Link-Leb.git"
     },
-    "author": "",
+    "author": "Carl Rizk, Carine Ismail, Rola Hadi",
     "license": "ISC",
     "bugs": {
         "url": "https://github.com/carlrizk/Link-Leb/issues"
@@ -24,7 +24,6 @@
         "browser-sync": "^2.26.13",
         "del": "^6.0.0",
         "gulp": "^4.0.2",
-        "gulp-imagemin": "^7.1.0",
         "gulp-sass": "^4.1.0"
     }
 }
