@@ -1,7 +1,5 @@
 @import 'variables';
-
 @import "node_modules/bootstrap/scss/bootstrap";
-
 .btn-xl {
     height: 4rem;
 }
@@ -10,4 +8,8 @@
     .border-width-#{$i} {
         border-width: 0.125 * $i + rem;
     }
+}
+
+td i+i {
+    padding-left: 2em;
 }
