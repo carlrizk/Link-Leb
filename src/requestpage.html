@@ -6,8 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
 
     <title>Link-Leb | Request Page</title>
 
@@ -16,18 +14,17 @@
 <body>
     <div class="vh-100 d-flex flex-column">
 
-        <nav class="navbar navbar-dark bg-primary">
-            <a href="./index.html" class="navbar-brand text-decoration-none py-0">
-                <img src="../assets/img/logo.png" width="50" height="50" alt="logo">
-                <h2 class="text-light ml-2 d-inline-block align-top mt-1">Link-Leb</h2>
-            </a>
-        </nav>
+        <div w3-include-html="navbar.html"></div>
 
-        <div class="container">
-            <div class="card mb-4 mt-4">
+        <div class="container d-flex-grow-1 pt-nav mt-4">
+            <div class="card">
                 <div class="card-body col-12">
                     <div class="form-row align-items-center">
-                        <div class="form-group col-sm-3 mr-1">
+                        <div class="form-group col-sm-3">
+                            <label class="d-block">ID</label>
+                            <input class="form-control" type="search" placeholder="ID" aria-label="ID">
+                        </div>
+                        <div class="form-group col-sm-3">
                             <label for="area">Area</label>
                             <select class="form-control" id="area">
                                 <option value="beirut">Beirut</option>
@@ -39,28 +36,28 @@
                                 <option value="southGovernate">South Governate</option>
                             </select>
                         </div>
-                        <div class="form-group col-sm-3 mr-1">
+                        <div class="form-group col-sm-3">
                             <label class="d-block">Needs</label>
-                            <div class="form-check form-check-inline">
+                            <div class="form-check">
                                 <input type="checkbox" class="form-check-input" id="renovation">
-                                <label class="form-check-label" for="renovation"><i class="fas fa-house-damage"></i> Renovation</label>
+                                <label class="form-check-label" for="renovation"><i class="fas fa-house-damage"></i>
+                                    Renovation</label>
                             </div>
-                            <div class="form-check form-check-inline">
+                            <div class="form-check">
                                 <input type="checkbox" class="form-check-input" id="food">
-                                <label class="form-check-label" for="renovation"><i class="fas fa-hamburger"></i> Food</label>
+                                <label class="form-check-label" for="renovation"><i class="fas fa-hamburger"></i>
+                                    Food</label>
                             </div>
-                            <div class="form-check form-check-inline">
+                            <div class="form-check">
                                 <input type="checkbox" class="form-check-input" id="clothes">
-                                <label class="form-check-label" for="renovation"><i class="fas fa-tshirt"></i> Clothes</label>
+                                <label class="form-check-label" for="renovation"><i class="fas fa-tshirt"></i>
+                                    Clothes</label>
                             </div>
-                            <div class="form-check form-check-inline">
+                            <div class="form-check">
                                 <input type="checkbox" class="form-check-input" id="medication">
-                                <label class="form-check-label" for="renovation"><i class="fas fa-prescription-bottle-alt"> Medication</i></label>
+                                <label class="form-check-label" for="renovation"><i
+                                        class="fas fa-prescription-bottle-alt"> Medication</i></label>
                             </div>
-                        </div>
-                        <div class="form-group col-sm-3 mr-1">
-                            <label class="d-block">ID</label>
-                            <input class="form-control" type="search" placeholder="ID" aria-label="ID">
                         </div>
                         <div class="form-group col-sm-4">
                             <button class="btn btn-primary" type="submit">Search</button>
@@ -70,110 +67,118 @@
                 </div>
             </div>
 
-            <div class="row my-4">
-                <div class="col">
-                    <table class="table table-hover" id="mytable">
-                        <thead>
-                            <tr>
-                                <th scope="col">#ID</th>
-                                <th scope="col">Area</th>
-                                <th scope="col">Needs</th>
-                                <th scope="col">Details</th>
-                            </tr>
-                        </thead>
-                        <tbody>
+            <div class="card mt-4">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col">
+                            <table class="table table-hover" id="mytable">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">#ID</th>
+                                        <th scope="col">Area</th>
+                                        <th scope="col">Needs</th>
+                                        <th scope="col">Details</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
 
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Beirut</td>
-                                <td><i class="fas fa-tshirt"></i></td>
-                                <td>
-                                    <a href="#">See more</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Akkar</td>
-                                <td><i class="fas fa-prescription-bottle-alt"></i></td>
-                                <td>
-                                    <a href="#">See more</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td>Beqaa</td>
-                                <td><i class="fas fa-prescription-bottle-alt"></i></td>
-                                <td>
-                                    <a href="#">See more</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">4</th>
-                                <td>Mount Lebanon</td>
-                                <td><i class="fas fa-tshirt"></i><i class="fas fa-prescription-bottle-alt"></i></td>
-                                <td>
-                                    <a href="#">See more</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">5</th>
-                                <td>Nabatieh</td>
-                                <td><i class="fas fa-house-damage"></i></td>
-                                <td>
-                                    <a href="#">See more</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">6</th>
-                                <td>North Governate</td>
-                                <td><i class="fas fa-hamburger"></i></td>
-                                <td>
-                                    <a href="#">See more</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">7</th>
-                                <td>South Governate</td>
-                                <td><i class="fas fa-prescription-bottle-alt"></i><i class="fas fa-hamburger"></i></td>
-                                <td>
-                                    <a href="#">See more</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">8</th>
-                                <td>Beirut</td>
-                                <td><i class="fas fa-house-damage"></i></td>
-                                <td>
-                                    <a href="#">See more</a>
-                                </td>
-                            </tr>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>Beirut</td>
+                                        <td><i class="fas fa-tshirt"></i> </td>
+                                        <td>
+                                            <a href="#">See more</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">2</th>
+                                        <td>Akkar</td>
+                                        <td><i class="fas fa-prescription-bottle-alt"></i> </td>
+                                        <td>
+                                            <a href="#">See more</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">3</th>
+                                        <td>Beqaa</td>
+                                        <td><i class="fas fa-prescription-bottle-alt"></i></td>
+                                        <td>
+                                            <a href="#">See more</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">4</th>
+                                        <td>Mount Lebanon</td>
+                                        <td><i class="fas fa-tshirt"></i><i class="fas fa-prescription-bottle-alt ml-2"></i>
+                                        </td>
+                                        <td>
+                                            <a href="#">See more</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">5</th>
+                                        <td>Nabatieh</td>
+                                        <td><i class="fas fa-house-damage"></i></td>
+                                        <td>
+                                            <a href="#">See more</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">6</th>
+                                        <td>North Governate</td>
+                                        <td><i class="fas fa-hamburger"></i></td>
+                                        <td>
+                                            <a href="#">See more</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">7</th>
+                                        <td>South Governate</td>
+                                        <td><i class="fas fa-prescription-bottle-alt"></i><i
+                                                class="fas fa-hamburger ml-2"></i></td>
+                                        <td>
+                                            <a href="#">See more</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">8</th>
+                                        <td>Beirut</td>
+                                        <td><i class="fas fa-house-damage"></i></td>
+                                        <td>
+                                            <a href="#">See more</a>
+                                        </td>
+                                    </tr>
 
-                        </tbody>
-                    </table>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination justify-content-end">
+                            <li class="page-item disabled">
+                                <a class="page-link" href="#" tabindex="-1">Previous</a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">Next</a>
+                            </li>
+                        </ul>
+                    </nav>
+
                 </div>
             </div>
-
-            <nav aria-label="Page navigation example">
-                <ul class="pagination justify-content-end">
-                    <li class="page-item disabled">
-                        <a class="page-link" href="#" tabindex="-1">Previous</a>
-                    </li>
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item">
-                        <a class="page-link" href="#">Next</a>
-                    </li>
-                </ul>
-            </nav>
         </div>
 
     </div>
 
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js " integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj " crossorigin="anonymous">
+
+    <script src="js/main.js "></script>
+    <script>
+        includeHTML();
     </script>
-    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js "></script>
 
 </body>
 

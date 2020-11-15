@@ -6,49 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <title>Link-Leb | About Us</title>
+    <title>Link-Leb | Partners</title>
 </head>
 
 <body>
 
-    <nav class="navbar navbar-dark bg-primary">
-        <a href="./index.html" class="navbar-brand text-decoration-none py-0">
-            <img src="../assets/img/logo.png" width="50" height="50" alt="logo">
-            <h2 class="text-light ml-2 d-inline-block align-top pt-1">Link-Leb</h2>
-        </a>
-    </nav>
+    <div class="vh-100 d-flex flex-column ">
 
-    <div class="container">
-        <div class="row">
-            <ol class="col-12 breadcrumb">
-                <li class="breadcrumb-item"><a href="./index.html">Home</a></li>
-                <li class="breadcrumb-item active">Our Parteners</li>
-            </ol>
-            <div class="col-12">
-                <h3 class="text-primary">Our Parteners</h3>
-                <hr>
-            </div>
-        </div>
+        <div w3-include-html="navbar.html"></div>
 
-        <div class="row row-content mb-5">
-            <div class="col-12">
-                <h2 class="text-center text-primary">Link-Leb Parteners</h2>
-                <div class="list-group list-group-flush text-center">
-                    <a href="#" class="list-group-item list-group-item-action">NGO1</a>
-                    <a href="#" class="list-group-item list-group-item-action">NGO2</a>
-                    <a href="#" class="list-group-item list-group-item-action">NGO3</a>
-                    <a href="#" class="list-group-item list-group-item-action">NGO4</a>
-                    <a href="#" class="list-group-item list-group-item-action">NGO5</a>
+        <div class="container flex-grow-1 pt-nav">
+
+            <div class="row h-100 align-items-center">
+                <div class="col-12">
+                    <h2 class="text-center text-primary">Link-Leb Partners</h2>
+                    <div class="list-group list-group-flush text-center">
+                        <a href="#" class="list-group-item list-group-item-action">NGO1</a>
+                        <a href="#" class="list-group-item list-group-item-action">NGO2</a>
+                        <a href="#" class="list-group-item list-group-item-action">NGO3</a>
+                        <a href="#" class="list-group-item list-group-item-action">NGO4</a>
+                        <a href="#" class="list-group-item list-group-item-action">NGO5</a>
+                    </div>
                 </div>
             </div>
         </div>
+
     </div>
 
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js "></script>
+    <script src="js/main.js "></script>
+    <script>
+        includeHTML();
+    </script>
 </body>
 
 </html>

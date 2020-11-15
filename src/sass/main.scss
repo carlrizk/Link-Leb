@@ -1,5 +1,8 @@
 @import 'variables';
 @import "node_modules/bootstrap/scss/bootstrap";
+@import "node_modules/@fortawesome/fontawesome-free/scss/fontawesome";
+@import "node_modules/@fortawesome/fontawesome-free/scss/solid.scss";
+
 .btn-xl {
     height: 4rem;
 }
@@ -10,6 +13,11 @@
     }
 }
 
-td i+i {
-    padding-left: 2em;
+html,
+body {
+    height: 100%;
+}
+
+.pt-nav{
+    padding-top: 60px;
 }
