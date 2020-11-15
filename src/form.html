@@ -14,14 +14,9 @@
 
     <div class="vh-100 d-flex flex-column ">
 
-        <nav class="navbar navbar-dark bg-primary">
-            <a href="./index.html" class="navbar-brand text-decoration-none py-0">
-                <img src="../assets/img/logo.png" width="50" height="50" alt="logo">
-                <h2 class="text-light ml-2 d-inline-block align-top mt-1">Link-Leb</h2>
-            </a>
-        </nav>
+        <div w3-include-html="navbar.html"></div>
 
-        <div class="container">
+        <div class="container pt-nav">
             <div class="row my-4">
                 <div class="col">
                     <h4 class="text-center">Fill out this form so we can Link you to Lebanon's helpers</h4>
@@ -39,30 +34,34 @@
                                 <div class="form-row align-items-center">
                                     <div class="form-group col-sm-6">
                                         <label for="fname">First Name</label>
-                                        <input class="form-control" type="text" id="fname" name="firstname" placeholder="Your name..">
+                                        <input class="form-control" type="text" id="fname" name="firstname"
+                                            placeholder="Your name..">
                                     </div>
                                     <div class="form-group col-sm-6">
                                         <label for="lname">Last Name</label>
-                                        <input class="form-control" type="text" id="lname" name="lastname" placeholder="Your last name..">
+                                        <input class="form-control" type="text" id="lname" name="lastname"
+                                            placeholder="Your last name..">
                                     </div>
                                 </div>
                                 <div class="form-row align-items-center">
                                     <div class="form-group col-sm-6">
                                         <label for="faname">Father Name</label>
-                                        <input class="form-control" type="text" id="faname" name="fathername" placeholder="Your Father name..">
+                                        <input class="form-control" type="text" id="faname" name="fathername"
+                                            placeholder="Your Father name..">
                                     </div>
                                     <div class="form-group col-sm-6">
                                         <label for="Moname">Mother Name</label>
-                                        <input class="form-control" type="text" id="Moname" name="mothername" placeholder="Your Mother name..">
+                                        <input class="form-control" type="text" id="Moname" name="mothername"
+                                            placeholder="Your Mother name..">
                                     </div>
                                 </div>
                                 <div class="form-row align-items-center">
                                     <div class="form-group col-sm-6">
                                         <label for="gender">Gender</label>
                                         <select class="form-control" id="gender">
-                                    <option value="male">Male</option>
-                                    <option value="female">Female</option>
-                                </select>
+                                            <option value="male">Male</option>
+                                            <option value="female">Female</option>
+                                        </select>
                                     </div>
                                     <div class="form-group col-sm-6">
                                         <label for="dateOfBirth">Date of Birth</label>
@@ -80,7 +79,8 @@
                                 <div class="form-row align-items-center">
                                     <div class="form-group col-sm-6">
                                         <label for="telInput">Telephone</label>
-                                        <input class="form-control" type="tel" placeholder="(+961)76-555-555" id="telInput">
+                                        <input class="form-control" type="tel" placeholder="(+961)76-555-555"
+                                            id="telInput">
                                     </div>
                                     <div class="form-group col-sm-6">
                                         <label for="area">Area</label>
@@ -99,7 +99,8 @@
                                 <div class="form-row align-items-center">
                                     <div class="form-group col-sm-12">
                                         <label for="address">Address</label>
-                                        <textarea class="form-control" id="address" name="Address" placeholder="Address" rows="3"></textarea>
+                                        <textarea class="form-control" id="address" name="Address" placeholder="Address"
+                                            rows="3"></textarea>
 
                                     </div>
                                 </div>
@@ -114,7 +115,8 @@
                                     <div class="form-group col-sm-6">
                                         <input type="checkbox" class="checkbox-inline" id="medication-checkbox" checked>
                                         <label class="form-check-label" for="medication-checkbox">Medication</label>
-                                        <input type="text" class="form-control" placeholder="Medication comments..." id="medicationInput">
+                                        <input type="text" class="form-control" placeholder="Medication comments..."
+                                            id="medicationInput">
                                     </div>
 
                                     <div class="form-group col-sm-6">
@@ -127,7 +129,8 @@
                                     <div class="form-group col-sm-6 ">
                                         <input type="checkbox" class="checkbox-inline" id="renovation-checkbox">
                                         <label class="form-check-label" for="renovation-checkbox">Renovation</label>
-                                        <input type="text" class="form-control" placeholder="Renovation comments..." disabled>
+                                        <input type="text" class="form-control" placeholder="Renovation comments..."
+                                            disabled>
                                     </div>
 
                                     <div class="form-group col-sm-6">
@@ -153,8 +156,10 @@
 
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js " integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj " crossorigin="anonymous"></script>
-    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js "></script>
+    <script src="js/main.js "></script>
+    <script>
+        includeHTML();
+    </script>
 </body>
 
 </html>
