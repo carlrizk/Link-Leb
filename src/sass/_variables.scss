@@ -12,6 +12,11 @@ $input-border-radius: $border-radius;
 $input-border-radius-lg: $border-radius;
 $input-border-radius-sm: $border-radius;
 
+$navbar-padding-y: 0rem;
+
 @import "node_modules/bootstrap/scss/functions";
 @import "node_modules/bootstrap/scss/variables";
 @import "node_modules/bootstrap/scss/mixins";
+
+
+$fa-font-path: "../assets/webfonts";
