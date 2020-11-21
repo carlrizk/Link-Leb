@@ -12,6 +12,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { SocialMediaInformationPanelComponent } from './social-media-information-panel/social-media-information-panel.component';
 import { ProfileInformationPanelComponent } from './profile-information-panel/profile-information-panel.component';
 import { RequestsTablePanelComponent } from './requests-table-panel/requests-table-panel.component';
+import { SpanWrapperComponent } from './span-wrapper/span-wrapper.component';
+import { DynamicComponentComponent } from './dynamic-component/dynamic-component.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { RequestsTablePanelComponent } from './requests-table-panel/requests-tab
     NavbarComponent,
     SocialMediaInformationPanelComponent,
     ProfileInformationPanelComponent,
-    RequestsTablePanelComponent
+    RequestsTablePanelComponent,
+    SpanWrapperComponent,
+    DynamicComponentComponent
   ],
   imports: [
     BrowserModule,

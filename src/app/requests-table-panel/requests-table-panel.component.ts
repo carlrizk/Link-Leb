@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { Request } from '../common/models/request.model';
 import { RequestTableColumnDefinition } from './request-table-column-definition';
 
@@ -13,41 +14,11 @@ export class RequestsTablePanelComponent implements OnInit {
   @Input() requests: Request[];
   @Input() columns: RequestTableColumnDefinition[];
 
+  previousIcon = faChevronLeft;
+  nextIcon = faChevronRight;
+
   constructor() { }
 
-  ngOnInit(): void {
-    this.title = 'Accepted Requests';
-    this.columns = [
-      {
-        name: '#',
-        evaluation: (req) => req.id
-      },
-      {
-        name: 'First Name',
-        evaluation: (req) => req.firstName
-      },
-      {
-        name: 'Last Name',
-        evaluation: (req) => req.lastName
-      }
-    ];
-
-    this.requests = [
-      {
-        id: '1',
-        firstName: 'Carl',
-        lastName: 'Rizk',
-        area: 'Beirut',
-        needs: []
-      },
-      {
-        id: '1',
-        firstName: 'Carl',
-        lastName: 'Rizk',
-        area: 'Beirut',
-        needs: []
-      }
-    ];
-  }
+  ngOnInit(): void { }
 
 }

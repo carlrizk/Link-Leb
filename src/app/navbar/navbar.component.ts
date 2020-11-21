@@ -9,13 +9,13 @@ import { faHome, faInfoCircle, faUsers, faSignOutAlt, faSignInAlt, faLifeRing, f
 })
 export class NavbarComponent implements OnInit {
 
-  faSignOutAlt = faSignOutAlt;
-  faSignInAlt = faSignInAlt;
-  faLifeRing = faLifeRing;
-  faUserCircle = faUserCircle;
-  faHome = faHome;
-  faInfoCircle = faInfoCircle;
-  faUsers = faUsers;
+  signOutIcon = faSignOutAlt;
+  signInIcon = faSignInAlt;
+  requestsIcon = faLifeRing;
+  profileIcon = faUserCircle;
+  homeIcon = faHome;
+  aboutUsIcon = faInfoCircle;
+  partnersIcon = faUsers;
 
   constructor() { }
 

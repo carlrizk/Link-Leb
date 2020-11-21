@@ -1,6 +1,7 @@
 import { Request } from '../common/models/request.model';
+import { DynamicComponentInput } from '../dynamic-component/dynamic-component';
 
 export interface RequestTableColumnDefinition {
     name: string;
-    evaluation: (request: Request) => string;
+    cellComponent: (request: Request) => DynamicComponentInput;
 }

@@ -13,19 +13,19 @@
     <ul class="navbar-nav mr-auto">
         <li class="nav-item">
             <a class="nav-link" href="#">
-              <fa-icon [icon]="faHome"></fa-icon>
+              <fa-icon [icon]="homeIcon"></fa-icon>
               <span> Home</span>
             </a>
           </li>
       <li class="nav-item">
         <a class="nav-link" href="#">
-          <fa-icon [icon]="faInfoCircle"></fa-icon>
+          <fa-icon [icon]="aboutUsIcon"></fa-icon>
           <span> About Us</span>
         </a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">
-          <fa-icon [icon]="faUsers"></fa-icon>
+          <fa-icon [icon]="partnersIcon"></fa-icon>
           <span> Partners</span>
         </a>
       </li>
@@ -35,19 +35,19 @@
       <ng-template #loggedInBlock>
         <li class="nav-item">
           <a class="nav-link" href="#">
-            <fa-icon [icon]="faUserCircle"></fa-icon>
+            <fa-icon [icon]="profileIcon"></fa-icon>
             <span> Profile</span>
           </a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">
-            <fa-icon [icon]="faLifeRing"></fa-icon>
+            <fa-icon [icon]="requestsIcon"></fa-icon>
             <span> Requests</span>
           </a>
         </li>
         <li class="nav-item active">
           <a class="nav-link" (click)="onSignOutClick()" href="#">
-            <fa-icon [icon]="faSignOutAlt"></fa-icon>
+            <fa-icon [icon]="signOutIcon"></fa-icon>
             <span> Sign Out</span>
           </a>
         </li>
@@ -55,7 +55,7 @@
       <ng-template #loggedOutBlock>
         <li class="nav-item active">
           <a class="nav-link" (click)="onSignInClick()" href="#">
-            <fa-icon [icon]="faSignInAlt"></fa-icon>
+            <fa-icon [icon]="signInIcon"></fa-icon>
             <span> Sign In</span>
           </a>
         </li>
