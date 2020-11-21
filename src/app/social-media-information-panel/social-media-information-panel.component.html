@@ -1,15 +1,15 @@
 <div class="card">
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item " *ngFor="let socialMedia of socialMedias">
-      <div [ngSwitch]="socialMedia.type" class="d-flex justify-content-between align-items-center">
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item " *ngFor="let socialMedia of socialMedias">
+            <div [ngSwitch]="socialMedia.type" class="d-flex justify-content-between align-items-center">
 
-        <div class="d-flex align-items-center">
-          <fa-icon [icon]="socialMedia.type.icon" class="px-1"></fa-icon>
-          <h6 class="m-0 px-1">{{ socialMedia.type.name }}</h6>
-        </div>
+                <div class="d-flex align-items-center">
+                    <fa-icon [icon]="socialMedia.type.icon" class="px-1"></fa-icon>
+                    <h6 class="m-0 px-1">{{ socialMedia.type.name }}</h6>
+                </div>
 
-        <a [href]="socialMedia.url" class="text-truncate text-secondary px-1"><span>{{ socialMedia.label }}</span></a>
-      </div>
-    </li>
-  </ul>
+                <a [href]="socialMedia.url" class="text-truncate text-secondary px-1"><span>{{ socialMedia.label }}</span></a>
+            </div>
+        </li>
+    </ul>
 </div>

@@ -11,13 +11,21 @@ import 'hammerjs';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SocialMediaInformationPanelComponent } from './social-media-information-panel/social-media-information-panel.component';
 import { ProfileInformationPanelComponent } from './profile-information-panel/profile-information-panel.component';
+import { AboutUsComponent } from './about-us/about-us.component';
+import { PartenersComponent } from './parteners/parteners.component';
+import { LoginCardComponent } from './login-card/login-card.component';
+import { LoginPageComponent } from './login-page/login-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     SocialMediaInformationPanelComponent,
-    ProfileInformationPanelComponent
+    ProfileInformationPanelComponent,
+    AboutUsComponent,
+    PartenersComponent,
+    LoginCardComponent,
+    LoginPageComponent
   ],
   imports: [
     BrowserModule,

@@ -1,65 +1,64 @@
 <nav class="navbar navbar-dark bg-primary navbar-expand-md fixed-top">
-  <a class="navbar-brand" href="index.html">
-    <img src="assets/logo.png" width="45" height="45" class="d-inline-block align-top" alt="">
-    <h3 class="d-inline-block d-md-none d-lg-inline-block my-1">Link-Leb</h3>
-  </a>
+    <a class="navbar-brand" href="index.html">
+        <img src="assets/logo.png" width="45" height="45" class="d-inline-block align-top" alt="">
+        <h3 class="d-inline-block d-md-none d-lg-inline-block my-1">Link-Leb</h3>
+    </a>
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-            <a class="nav-link" href="#">
-              <fa-icon [icon]="faHome"></fa-icon>
-              <span> Home</span>
-            </a>
-          </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">
-          <fa-icon [icon]="faInfoCircle"></fa-icon>
-          <span> About Us</span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">
-          <fa-icon [icon]="faUsers"></fa-icon>
-          <span> Partners</span>
-        </a>
-      </li>
-    </ul>
-    <ul class="navbar-nav ml-auto">
-      <div *ngIf="loggedIn; then loggedInBlock else loggedOutBlock"></div>
-      <ng-template #loggedInBlock>
-        <li class="nav-item">
-          <a class="nav-link" href="#">
-            <fa-icon [icon]="faUserCircle"></fa-icon>
-            <span> Profile</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">
-            <fa-icon [icon]="faLifeRing"></fa-icon>
-            <span> Requests</span>
-          </a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" (click)="onSignOutClick()" href="#">
-            <fa-icon [icon]="faSignOutAlt"></fa-icon>
-            <span> Sign Out</span>
-          </a>
-        </li>
-      </ng-template>
-      <ng-template #loggedOutBlock>
-        <li class="nav-item active">
-          <a class="nav-link" (click)="onSignInClick()" href="#">
-            <fa-icon [icon]="faSignInAlt"></fa-icon>
-            <span> Sign In</span>
-          </a>
-        </li>
-      </ng-template>
-    </ul>
-  </div>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <fa-icon [icon]="faHome"></fa-icon>
+                    <span> Home</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <fa-icon [icon]="faInfoCircle"></fa-icon>
+                    <span> About Us</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <fa-icon [icon]="faUsers"></fa-icon>
+                    <span> Partners</span>
+                </a>
+            </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+            <div *ngIf="loggedIn; then loggedInBlock else loggedOutBlock"></div>
+            <ng-template #loggedInBlock>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <fa-icon [icon]="faUserCircle"></fa-icon>
+                        <span> Profile</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <fa-icon [icon]="faLifeRing"></fa-icon>
+                        <span> Requests</span>
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" (click)="onSignOutClick()" href="#">
+                        <fa-icon [icon]="faSignOutAlt"></fa-icon>
+                        <span> Sign Out</span>
+                    </a>
+                </li>
+            </ng-template>
+            <ng-template #loggedOutBlock>
+                <li class="nav-item active">
+                    <a class="nav-link" (click)="onSignInClick()" href="#">
+                        <fa-icon [icon]="faSignInAlt"></fa-icon>
+                        <span> Sign In</span>
+                    </a>
+                </li>
+            </ng-template>
+        </ul>
+    </div>
 </nav>
