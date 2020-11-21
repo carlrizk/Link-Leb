@@ -1,0 +1,28 @@
+<div class="card">
+  <div class="card-body p-0">
+    <h4 class="card-title text-center my-3">
+      {{ title }}
+    </h4>
+    <div class="overflow-auto">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col" *ngFor="let column of columns">
+                {{ column.name }}
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let request of requests">
+            <td *ngFor="let column of columns">
+                {{ column.evaluation(request) }} 
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="card-footer text-muted">
+    <p class="p-0 m-0">1 - 100 of 399</p>
+  </div>
+</div>
