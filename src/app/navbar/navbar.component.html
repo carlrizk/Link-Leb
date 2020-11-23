@@ -1,65 +1,125 @@
-<nav class="navbar navbar-dark bg-primary navbar-expand-md fixed-top">
-  <a class="navbar-brand" href="index.html">
-    <img src="assets/logo.png" width="45" height="45" class="d-inline-block align-top" alt="">
-    <h3 class="d-inline-block d-md-none d-lg-inline-block my-1">Link-Leb</h3>
-  </a>
+<mat-sidenav-container>
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+  <mat-toolbar color="primary">
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-            <a class="nav-link" href="#">
-              <fa-icon [icon]="homeIcon"></fa-icon>
-              <span> Home</span>
-            </a>
-          </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">
-          <fa-icon [icon]="aboutUsIcon"></fa-icon>
-          <span> About Us</span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">
-          <fa-icon [icon]="partnersIcon"></fa-icon>
-          <span> Partners</span>
-        </a>
-      </li>
-    </ul>
-    <ul class="navbar-nav ml-auto">
+    <button mat-flat-button color="primary">
+      <img src="assets/logo.png" width="50" height="50">
+      <span class="mat-h1" fxHide.sm> Link-Leb</span>
+    </button>
+
+    <div fxHide.lt-sm>
+
+      <button mat-flat-button color="primary">
+        <fa-icon [icon]="homeIcon" class="mat-h3"></fa-icon>
+        <span class="mat-h3" fxHide.lt-md> Home</span>
+      </button>
+
+      <button mat-flat-button color="primary">
+        <fa-icon [icon]="aboutUsIcon" class="mat-h3"></fa-icon>
+        <span class="mat-h3" fxHide.lt-md> About Us</span>
+      </button>
+
+      <button mat-flat-button color="primary">
+        <fa-icon [icon]="partnersIcon" class="mat-h3"></fa-icon>
+        <span class="mat-h3" fxHide.lt-md> Partners</span>
+      </button>
+
+    </div>
+
+    <span class="spacer"></span>
+
+    <div fxHide.lt-sm>
+
       <div *ngIf="loggedIn; then loggedInBlock else loggedOutBlock"></div>
+
       <ng-template #loggedInBlock>
-        <li class="nav-item">
-          <a class="nav-link" href="#">
-            <fa-icon [icon]="profileIcon"></fa-icon>
-            <span> Profile</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">
-            <fa-icon [icon]="requestsIcon"></fa-icon>
-            <span> Requests</span>
-          </a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" (click)="onSignOutClick()" href="#">
-            <fa-icon [icon]="signOutIcon"></fa-icon>
-            <span> Sign Out</span>
-          </a>
-        </li>
+
+        <button mat-flat-button color="primary">
+          <fa-icon [icon]="profileIcon" class="mat-h3"></fa-icon>
+          <span class="mat-h3" fxHide.lt-md> Profile</span>
+        </button>
+
+        <button mat-flat-button color="primary">
+          <fa-icon [icon]="requestsIcon" class="mat-h3"></fa-icon>
+          <span class="mat-h3" fxHide.lt-md> Requests</span>
+        </button>
+
+        <button mat-flat-button color="primary" (click)="onSignOutClick()">
+          <fa-icon [icon]="signOutIcon" class="mat-h3"></fa-icon>
+          <span class="mat-h3" fxHide.lt-md> Sign Out</span>
+        </button>
+
       </ng-template>
+
       <ng-template #loggedOutBlock>
-        <li class="nav-item active">
-          <a class="nav-link" (click)="onSignInClick()" href="#">
-            <fa-icon [icon]="signInIcon"></fa-icon>
-            <span> Sign In</span>
-          </a>
-        </li>
+
+        <button mat-flat-button color="primary" (click)="onSignInClick()">
+          <fa-icon [icon]="signInIcon" class="mat-h3"></fa-icon>
+          <span class="mat-h3" fxHide.lt-md> Sign In</span>
+        </button>
+
       </ng-template>
-    </ul>
+
+    </div>
+
+    <div fxHide.gt-xs>
+      <button mat-flat-button color="primary" (click)="sidenav.toggle()">
+        <fa-icon [icon]="barsIcon" class="mat-h3"></fa-icon>
+      </button>
+    </div>
+  </mat-toolbar>
+
+  <div class="m-3">
+    <ng-content></ng-content>
   </div>
-</nav>
+
+  <mat-sidenav #sidenav>
+    <mat-nav-list>
+
+      <a mat-list-item>
+        <fa-icon [icon]="homeIcon"></fa-icon>
+        <span>Home</span>
+      </a>
+      <a mat-list-item>
+        <fa-icon [icon]="aboutUsIcon"></fa-icon>
+        <span>About Us</span>
+      </a>
+      <a mat-list-item>
+        <fa-icon [icon]="partnersIcon"></fa-icon>
+        <span>Partners</span>
+      </a>
+
+      <mat-divider></mat-divider>
+
+      <div *ngIf="loggedIn; then loggedInBlockSideNav else loggedOutBlockSideNav"></div>
+
+      <ng-template #loggedInBlockSideNav>
+        <a mat-list-item>
+          <fa-icon [icon]="profileIcon"></fa-icon>
+          <span>Profile </span>
+        </a>
+        <a mat-list-item>
+          <fa-icon [icon]="requestsIcon"></fa-icon>
+          <span>Requests</span>
+        </a>
+        <a mat-list-item (click)="onSignOutClick()">
+          <fa-icon [icon]="signOutIcon"></fa-icon>
+          <span>Sign Out</span>
+        </a>
+
+      </ng-template>
+
+      <ng-template #loggedOutBlockSideNav>
+
+        <a mat-list-item (click)="onSignInClick()">
+          <fa-icon [icon]="signInIcon"></fa-icon>
+          <span>Sign In</span>
+        </a>
+
+      </ng-template>
+
+    </mat-nav-list>
+
+  </mat-sidenav>
+
+</mat-sidenav-container>

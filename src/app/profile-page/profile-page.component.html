@@ -1,0 +1,12 @@
+<app-navbar>
+  <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutAlign="space-evenly space-evenly" fxLayoutGap="10px">
+    <div fxLayout="column" fxLayoutGap="10px" fxFlex.gt-sm="25">
+      <app-profile-information-panel [user]="user">
+      </app-profile-information-panel>
+      <app-social-media-information-panel [socialMedias]="user.socialMedias"></app-social-media-information-panel>
+    </div>
+    <div fxFlex.gt-sm="75">
+      <app-requests-table-panel title="Accepted Requests"></app-requests-table-panel>
+    </div>
+  </div>
+</app-navbar>

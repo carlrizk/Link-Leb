@@ -14,6 +14,14 @@ import { ProfileInformationPanelComponent } from './profile-information-panel/pr
 import { RequestsTablePanelComponent } from './requests-table-panel/requests-table-panel.component';
 import { SpanWrapperComponent } from './span-wrapper/span-wrapper.component';
 import { DynamicComponentComponent } from './dynamic-component/dynamic-component.component';
+import { ProfilePageComponent } from './profile-page/profile-page.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -23,13 +31,21 @@ import { DynamicComponentComponent } from './dynamic-component/dynamic-component
     ProfileInformationPanelComponent,
     RequestsTablePanelComponent,
     SpanWrapperComponent,
-    DynamicComponentComponent
+    DynamicComponentComponent,
+    ProfilePageComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    MatToolbarModule,
+    MatButtonModule,
+    FlexLayoutModule,
+    MatSidenavModule,
+    MatListModule,
+    MatDividerModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
