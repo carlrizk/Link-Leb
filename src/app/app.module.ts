@@ -24,6 +24,10 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatCardModule } from '@angular/material/card';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { AboutUsComponent } from './about-us/about-us.component';
+import { PartenersComponent } from './parteners/parteners.component';
+import { LoginCardComponent } from './login-card/login-card.component';
+import { LoginPageComponent } from './login-page/login-page.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +39,10 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     SpanWrapperComponent,
     DynamicComponentComponent,
     ProfilePageComponent,
+    AboutUsComponent,
+    PartenersComponent,
+    LoginCardComponent,
+    LoginPageComponent
   ],
   imports: [
     BrowserModule,
