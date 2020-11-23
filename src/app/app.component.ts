@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { SocialMedia } from './common/models/social-media.model';
 import { User } from './common/models/user.model';
 
 @Component({
@@ -10,46 +9,28 @@ import { User } from './common/models/user.model';
 export class AppComponent {
   title = 'Link-Leb';
 
-  socialMedias: SocialMedia[] = [
-    {
-      type: {
-        name: 'Website',
-        icon: {
-          prefix: 'fas',
-          iconName: 'globe'
-        }
-      },
-      label: 'Link-Leb',
-      url: '#'
-    },
-    {
-      type: {
-        name: 'Facebook',
-        icon: {
-          prefix: 'fab',
-          iconName: 'facebook'
-        }
-      },
-      label: 'Link-Leb',
-      url: '#'
-    },
-    {
-      type: {
-        name: 'Twitter',
-        icon: {
-          prefix: 'fab',
-          iconName: 'twitter'
-        }
-      },
-      label: 'LinkLebOfficial',
-      url: '#'
-    }
-  ];
-
   user: User = {
     displayName: 'Link-Leb',
-    description: 'Platform that helps NGOs',
+    description: 'A platform that helps NGO\'s ',
     avatar: 'assets/logo.png',
-    socialMedias: this.socialMedias
+    socialMedias: [
+      {
+        type: {
+          name: 'Facebook',
+          icon: ['fab', 'facebook']
+        },
+        label: 'Facebook',
+        url: 'localhost'
+      },
+      {
+        type: {
+          name: 'Twitter',
+          icon: ['fab', 'twitter']
+        },
+        label: 'Twitter',
+        url: 'localhost'
+      }
+    ]
   };
+
 }

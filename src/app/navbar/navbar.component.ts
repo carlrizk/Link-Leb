@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { faHome, faInfoCircle, faUsers, faSignOutAlt, faSignInAlt, faLifeRing, faUserCircle } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faInfoCircle, faUsers, faSignOutAlt, faSignInAlt, faLifeRing, faUserCircle, faBars } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-navbar',
@@ -9,13 +9,16 @@ import { faHome, faInfoCircle, faUsers, faSignOutAlt, faSignInAlt, faLifeRing, f
 })
 export class NavbarComponent implements OnInit {
 
-  faSignOutAlt = faSignOutAlt;
-  faSignInAlt = faSignInAlt;
-  faLifeRing = faLifeRing;
-  faUserCircle = faUserCircle;
-  faHome = faHome;
-  faInfoCircle = faInfoCircle;
-  faUsers = faUsers;
+  signOutIcon = faSignOutAlt;
+  signInIcon = faSignInAlt;
+  requestsIcon = faLifeRing;
+  profileIcon = faUserCircle;
+  homeIcon = faHome;
+  aboutUsIcon = faInfoCircle;
+  partnersIcon = faUsers;
+  barsIcon = faBars;
+
+
 
   constructor() { }
 

@@ -11,19 +11,53 @@ import 'hammerjs';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SocialMediaInformationPanelComponent } from './social-media-information-panel/social-media-information-panel.component';
 import { ProfileInformationPanelComponent } from './profile-information-panel/profile-information-panel.component';
+import { RequestsTablePanelComponent } from './requests-table-panel/requests-table-panel.component';
+import { SpanWrapperComponent } from './span-wrapper/span-wrapper.component';
+import { DynamicComponentComponent } from './dynamic-component/dynamic-component.component';
+import { ProfilePageComponent } from './profile-page/profile-page.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatCardModule } from '@angular/material/card';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { AboutUsComponent } from './about-us/about-us.component';
+import { PartenersComponent } from './parteners/parteners.component';
+import { LoginCardComponent } from './login-card/login-card.component';
+import { LoginPageComponent } from './login-page/login-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     SocialMediaInformationPanelComponent,
-    ProfileInformationPanelComponent
+    ProfileInformationPanelComponent,
+    RequestsTablePanelComponent,
+    SpanWrapperComponent,
+    DynamicComponentComponent,
+    ProfilePageComponent,
+    AboutUsComponent,
+    PartenersComponent,
+    LoginCardComponent,
+    LoginPageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    MatToolbarModule,
+    MatButtonModule,
+    FlexLayoutModule,
+    MatSidenavModule,
+    MatListModule,
+    MatDividerModule,
+    MatCardModule,
+    MatTableModule,
+    MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]
