@@ -1,3 +1,8 @@
+# Useful Links:
+## [Angular Material Docs](https://material.angular.io/components/categories)
+## [Anfular Material: classes for text size etc...](https://material.angular.io/guide/typography)
+## [Flex Layout](https://github.com/angular/flex-layout/wiki)
+
 # LinkLeb
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
