@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { User } from '../common/models/user.model';
 
 @Component({
@@ -8,7 +8,7 @@ import { User } from '../common/models/user.model';
 })
 export class ProfilePageComponent implements OnInit {
 
-  @Input() user: User;
+  user: User = User.Nil;
 
   constructor() { }
 

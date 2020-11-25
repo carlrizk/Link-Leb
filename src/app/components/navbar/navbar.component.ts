@@ -28,12 +28,4 @@ export class NavbarComponent implements OnInit {
     this.loggedIn = true;
   }
 
-  onSignOutClick(): void {
-    this.loggedIn = false;
-  }
-
-  onSignInClick(): void {
-    this.loggedIn = true;
-  }
-
 }
