@@ -3,7 +3,6 @@
 }
 
 mat-sidenav-container {
-  height: 100vh;
 
   mat-sidenav {
     position: fixed;
@@ -16,4 +15,10 @@ mat-sidenav-container {
       }
     }
   }
+}
+
+.page-content {
+  margin:10px;
+  margin-bottom: 0px;
+  height: calc(90% - 10px)
 }

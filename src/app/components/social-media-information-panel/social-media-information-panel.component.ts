@@ -1,8 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { SocialMedia } from '../common/models/social-media.model';
 import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { faFacebook, faTwitter } from '@fortawesome/free-brands-svg-icons';
-import { faGlobe } from '@fortawesome/free-solid-svg-icons';
+import { faGlobe, faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
+import { SocialMedia } from 'src/app/common/models/social-media.model';
 
 @Component({
   selector: 'app-social-media-information-panel',
@@ -11,10 +11,10 @@ import { faGlobe } from '@fortawesome/free-solid-svg-icons';
 })
 export class SocialMediaInformationPanelComponent implements OnInit {
 
-  @Input() socialMedias: SocialMedia[];
+  @Input() socialMedias: SocialMedia[] = [SocialMedia.Nil];
 
   constructor(library: FaIconLibrary) {
-    library.addIcons(faGlobe, faFacebook, faTwitter);
+    library.addIcons(faGlobe, faFacebook, faTwitter, faExclamationTriangle);
   }
 
   ngOnInit(): void { }

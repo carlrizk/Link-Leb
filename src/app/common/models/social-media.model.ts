@@ -1,7 +1,11 @@
 import { SocialMediaType } from './social-media-type.model';
 
-export interface SocialMedia {
+export class SocialMedia {
+    static readonly Nil: SocialMedia = {
+        type: SocialMediaType.Nil,
+        url: 'localhost'
+    };
+
     type: SocialMediaType;
-    label: string;
     url: string;
 }

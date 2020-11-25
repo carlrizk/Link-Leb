@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { User } from '../common/models/user.model';
+import { User } from 'src/app/common/models/user.model';
 
 @Component({
   selector: 'app-profile-information-panel',
@@ -8,11 +8,10 @@ import { User } from '../common/models/user.model';
 })
 export class ProfileInformationPanelComponent implements OnInit {
 
-  @Input() user: User;
+  @Input() user: User = User.Nil;
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
 }

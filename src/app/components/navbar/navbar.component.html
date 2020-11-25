@@ -1,15 +1,15 @@
-<mat-sidenav-container>
+<mat-sidenav-container fxFill>
 
   <mat-toolbar color="primary">
 
-    <button mat-flat-button color="primary">
+    <button mat-flat-button color="primary" routerLink="/">
       <img src="assets/logo.png" width="50" height="50">
       <span class="mat-h1" fxHide.sm> Link-Leb</span>
     </button>
 
     <div fxHide.lt-sm>
 
-      <button mat-flat-button color="primary">
+      <button mat-flat-button color="primary" routerLink="/">
         <fa-icon [icon]="homeIcon" class="mat-h3"></fa-icon>
         <span class="mat-h3" fxHide.lt-md> Home</span>
       </button>
@@ -34,7 +34,7 @@
 
       <ng-template #loggedInBlock>
 
-        <button mat-flat-button color="primary">
+        <button mat-flat-button color="primary" routerLink="/profile">
           <fa-icon [icon]="profileIcon" class="mat-h3"></fa-icon>
           <span class="mat-h3" fxHide.lt-md> Profile</span>
         </button>
@@ -44,7 +44,7 @@
           <span class="mat-h3" fxHide.lt-md> Requests</span>
         </button>
 
-        <button mat-flat-button color="primary" (click)="onSignOutClick()">
+        <button mat-flat-button color="primary" routerLink="/login">
           <fa-icon [icon]="signOutIcon" class="mat-h3"></fa-icon>
           <span class="mat-h3" fxHide.lt-md> Sign Out</span>
         </button>
@@ -53,7 +53,7 @@
 
       <ng-template #loggedOutBlock>
 
-        <button mat-flat-button color="primary" (click)="onSignInClick()">
+        <button mat-flat-button color="primary" routerLink="/login">
           <fa-icon [icon]="signInIcon" class="mat-h3"></fa-icon>
           <span class="mat-h3" fxHide.lt-md> Sign In</span>
         </button>
@@ -69,7 +69,8 @@
     </div>
   </mat-toolbar>
 
-  <div class="m-3">
+
+  <div class="page-content">
     <ng-content></ng-content>
   </div>
 
@@ -94,7 +95,7 @@
       <div *ngIf="loggedIn; then loggedInBlockSideNav else loggedOutBlockSideNav"></div>
 
       <ng-template #loggedInBlockSideNav>
-        <a mat-list-item>
+        <a mat-list-item routerLink="/profile">
           <fa-icon [icon]="profileIcon"></fa-icon>
           <span>Profile </span>
         </a>
@@ -102,7 +103,7 @@
           <fa-icon [icon]="requestsIcon"></fa-icon>
           <span>Requests</span>
         </a>
-        <a mat-list-item (click)="onSignOutClick()">
+        <a mat-list-item routerLink="/login">
           <fa-icon [icon]="signOutIcon"></fa-icon>
           <span>Sign Out</span>
         </a>
@@ -111,7 +112,7 @@
 
       <ng-template #loggedOutBlockSideNav>
 
-        <a mat-list-item (click)="onSignInClick()">
+        <a mat-list-item routerLink="/login">
           <fa-icon [icon]="signInIcon"></fa-icon>
           <span>Sign In</span>
         </a>
