@@ -1,7 +1,7 @@
-# Useful Links:
-## [Angular Material Docs](https://material.angular.io/components/categories)
-## [Anfular Material: classes for text size etc...](https://material.angular.io/guide/typography)
-## [Flex Layout](https://github.com/angular/flex-layout/wiki)
+## Useful Links:
+- [Angular Material Docs](https://material.angular.io/components/categories)
+- [Anfular Material: classes for text size etc...](https://material.angular.io/guide/typography)
+- [Flex Layout](https://github.com/angular/flex-layout/wiki)
 
 # LinkLeb
 
