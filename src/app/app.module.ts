@@ -18,6 +18,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
+import {MatGridListModule} from '@angular/material/grid-list';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatCardModule } from '@angular/material/card';
 import { MatTableModule } from '@angular/material/table';
@@ -28,6 +29,11 @@ import { LoginPageComponent } from './login-page/login-page.component';
 import { LoginPanelComponent } from './components/login-panel/login-panel.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { RequestFormComponent } from './request-form/request-form.component';
+import { MatSelectModule } from '@angular/material/select';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -40,7 +46,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     AboutUsComponent,
     PartenersComponent,
     LoginPageComponent,
-    LoginPanelComponent
+    LoginPanelComponent,
+    RequestFormComponent
   ],
   imports: [
     BrowserModule,
@@ -52,12 +59,17 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     FlexLayoutModule,
     MatSidenavModule,
     MatListModule,
+    MatGridListModule,
     MatDividerModule,
     MatCardModule,
+    MatSelectModule,
+    MatSlideToggleModule,
     MatTableModule,
     MatPaginatorModule,
     MatInputModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatCheckboxModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
