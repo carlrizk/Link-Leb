@@ -9,11 +9,11 @@
 }
 
 .mask {
-  background: linear-gradient(mat-color($Link-Leb-primary, 500, 0.8) 40%, mat-color($Link-Leb-primary, 500, 0.9));
+  background: mat-color($Link-Leb-primary, 500, 0.8);
   position: fixed;
 
-  @include layout-bp(gt-sm){
-    clip-path: polygon(0 0, 0 0, 100% 100%, 0 100%);
+  @include layout-bp(gt-sm) {
+    clip-path: ellipse(50% 100% at 0% 50%);
   }
 }
 
