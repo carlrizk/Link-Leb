@@ -28,6 +28,7 @@ import { LoginPageComponent } from './login-page/login-page.component';
 import { LoginPanelComponent } from './components/login-panel/login-panel.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { HomePageComponent } from './home-page/home-page.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     AboutUsComponent,
     PartenersComponent,
     LoginPageComponent,
-    LoginPanelComponent
+    LoginPanelComponent,
+    HomePageComponent
   ],
   imports: [
     BrowserModule,

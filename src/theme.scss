@@ -1,0 +1,54 @@
+@import '~@angular/flex-layout/mq';
+
+/* For use in src/lib/core/theming/_palette.scss */
+$md-linklebtheme: (50 : #f5e4e4,
+  100 : #e6bcbc,
+  200 : #d68f8f,
+  300 : #c66262,
+  400 : #b94040,
+  500 : #ad1e1e,
+  600 : #a61a1a,
+  700 : #9c1616,
+  800 : #931212,
+  900 : #830a0a,
+  A100 : #ffb3b3,
+  A200 : #ff8080,
+  A400 : #ff4d4d,
+  A700 : #ff3333,
+  contrast: (50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #ffffff,
+    400 : #ffffff,
+    500 : #ffffff,
+    600 : #ffffff,
+    700 : #ffffff,
+    800 : #ffffff,
+    900 : #ffffff,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #000000,
+    A700 : #ffffff,
+  ));
+
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$Link-Leb-primary: mat-palette($md-linklebtheme);
+$Link-Leb-accent: mat-palette($mat-pink, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$Link-Leb-warn: mat-palette($mat-red);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$Link-Leb-theme: mat-light-theme((color: (primary: $Link-Leb-primary,
+      accent: $Link-Leb-accent,
+      warn: $Link-Leb-warn,
+    )));
