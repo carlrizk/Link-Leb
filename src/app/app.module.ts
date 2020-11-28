@@ -34,6 +34,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HomePageComponent } from './home-page/home-page.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     PartenersComponent,
     LoginPageComponent,
     LoginPanelComponent,
-    RequestFormComponent
+    RequestFormComponent,
+    HomePageComponent
   ],
   imports: [
     BrowserModule,

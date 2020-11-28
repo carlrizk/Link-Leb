@@ -1,0 +1,22 @@
+@import '/src/theme.scss';
+
+.background-image {
+  background-image: linear-gradient(black, black), url('../../assets/background.jpeg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-blend-mode: saturation;
+}
+
+.mask {
+  background: mat-color($Link-Leb-primary, 500, 0.8);
+  position: fixed;
+
+  @include layout-bp(gt-sm) {
+    clip-path: ellipse(50% 100% at 0% 50%);
+  }
+}
+
+.mat-display-4 {
+  margin: 0;
+}
