@@ -23,18 +23,18 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatCardModule } from '@angular/material/card';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
-import { AboutUsComponent } from './about-us/about-us.component';
-import { PartenersComponent } from './parteners/parteners.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { LoginPanelComponent } from './components/login-panel/login-panel.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { RequestFormComponent } from './request-form/request-form.component';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HomePageComponent } from './home-page/home-page.component';
+import { AboutusPageComponent } from './aboutus-page/aboutus-page.component';
+import { PartnersPageComponent } from './partners-page/partners-page.component';
+import { RequestformPageComponent } from './requestform-page/requestform-page.component';
 
 @NgModule({
   declarations: [
@@ -44,12 +44,12 @@ import { HomePageComponent } from './home-page/home-page.component';
     ProfileInformationPanelComponent,
     RequestsTablePanelComponent,
     ProfilePageComponent,
-    AboutUsComponent,
-    PartenersComponent,
     LoginPageComponent,
     LoginPanelComponent,
-    RequestFormComponent,
-    HomePageComponent
+    HomePageComponent,
+    AboutusPageComponent,
+    PartnersPageComponent,
+    RequestformPageComponent
   ],
   imports: [
     BrowserModule,

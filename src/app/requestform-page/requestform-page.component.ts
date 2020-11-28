@@ -1,14 +1,13 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
 import { Request, Gender, Area, Needs } from '../common/models/request';
 
 @Component({
-  selector: 'app-request-form',
-  templateUrl: './request-form.component.html',
-  styleUrls: ['./request-form.component.scss']
+  selector: 'app-requestform-page',
+  templateUrl: './requestform-page.component.html',
+  styleUrls: ['./requestform-page.component.scss']
 })
-export class RequestFormComponent implements OnInit {
+export class RequestformPageComponent implements OnInit {
 
   @ViewChild('rform') requestFromDirective;
 

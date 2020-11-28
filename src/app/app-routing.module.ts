@@ -1,19 +1,18 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AboutUsComponent } from './about-us/about-us.component';
+import { AboutusPageComponent } from './aboutus-page/aboutus-page.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { LoginPageComponent } from './login-page/login-page.component';
-import { PartenersComponent } from './parteners/parteners.component';
+import { PartnersPageComponent } from './partners-page/partners-page.component';
 import { ProfilePageComponent } from './profile-page/profile-page.component';
-import {RequestFormComponent} from './request-form/request-form.component';
+import {RequestformPageComponent} from './requestform-page/requestform-page.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginPageComponent },
   { path: 'profile', component: ProfilePageComponent},
-  { path: 'aboutus', component: AboutUsComponent},
-  { path: 'partners', component: PartenersComponent},
-  { path: 'requestform', component: RequestFormComponent},
-  { path: 'profile', component: ProfilePageComponent },
+  { path: 'aboutus', component: AboutusPageComponent},
+  { path: 'partners', component: PartnersPageComponent},
+  { path: 'requestform', component: RequestformPageComponent},
   { path: '', component: HomePageComponent },
 ];
 
