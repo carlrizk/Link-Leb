@@ -14,12 +14,12 @@
         <span class="mat-h3" fxHide.lt-md> Home</span>
       </button>
 
-      <button mat-flat-button color="primary">
+      <button mat-flat-button color="primary" routerLink="/aboutus">
         <fa-icon [icon]="aboutUsIcon" class="mat-h3"></fa-icon>
         <span class="mat-h3" fxHide.lt-md> About Us</span>
       </button>
 
-      <button mat-flat-button color="primary">
+      <button mat-flat-button color="primary" routerLink="/partners">
         <fa-icon [icon]="partnersIcon" class="mat-h3"></fa-icon>
         <span class="mat-h3" fxHide.lt-md> Partners</span>
       </button>
@@ -39,7 +39,7 @@
           <span class="mat-h3" fxHide.lt-md> Profile</span>
         </button>
 
-        <button mat-flat-button color="primary">
+        <button mat-flat-button color="primary" routerLink="/requestform">
           <fa-icon [icon]="requestsIcon" class="mat-h3"></fa-icon>
           <span class="mat-h3" fxHide.lt-md> Requests</span>
         </button>
@@ -82,11 +82,11 @@
         <span>Home</span>
       </a>
       <a mat-list-item>
-        <fa-icon [icon]="aboutUsIcon"></fa-icon>
+        <fa-icon [icon]="aboutUsIcon" routerLink="/aboutus"></fa-icon>
         <span>About Us</span>
       </a>
       <a mat-list-item>
-        <fa-icon [icon]="partnersIcon"></fa-icon>
+        <fa-icon [icon]="partnersIcon" routerLink="/partners"></fa-icon>
         <span>Partners</span>
       </a>
 
@@ -100,7 +100,7 @@
           <span>Profile </span>
         </a>
         <a mat-list-item>
-          <fa-icon [icon]="requestsIcon"></fa-icon>
+          <fa-icon [icon]="requestsIcon" routerLink="/requestform"></fa-icon>
           <span>Requests</span>
         </a>
         <a mat-list-item routerLink="/login">
