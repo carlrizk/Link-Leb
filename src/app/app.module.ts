@@ -18,17 +18,23 @@ import { MatButtonModule } from '@angular/material/button';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
+import { MatGridListModule } from '@angular/material/grid-list';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatCardModule } from '@angular/material/card';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
-import { AboutUsComponent } from './about-us/about-us.component';
-import { PartenersComponent } from './parteners/parteners.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { LoginPanelComponent } from './components/login-panel/login-panel.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { ReactiveFormsModule } from '@angular/forms';
 import { HomePageComponent } from './home-page/home-page.component';
+import { AboutusPageComponent } from './aboutus-page/aboutus-page.component';
+import { PartnersPageComponent } from './partners-page/partners-page.component';
+import { RequestformPageComponent } from './requestform-page/requestform-page.component';
 
 @NgModule({
   declarations: [
@@ -38,11 +44,12 @@ import { HomePageComponent } from './home-page/home-page.component';
     ProfileInformationPanelComponent,
     RequestsTablePanelComponent,
     ProfilePageComponent,
-    AboutUsComponent,
-    PartenersComponent,
     LoginPageComponent,
     LoginPanelComponent,
-    HomePageComponent
+    HomePageComponent,
+    AboutusPageComponent,
+    PartnersPageComponent,
+    RequestformPageComponent
   ],
   imports: [
     BrowserModule,
@@ -54,12 +61,17 @@ import { HomePageComponent } from './home-page/home-page.component';
     FlexLayoutModule,
     MatSidenavModule,
     MatListModule,
+    MatGridListModule,
     MatDividerModule,
     MatCardModule,
+    MatSelectModule,
+    MatSlideToggleModule,
     MatTableModule,
     MatPaginatorModule,
     MatInputModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatCheckboxModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

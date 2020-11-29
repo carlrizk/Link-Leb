@@ -1,0 +1,118 @@
+<app-navbar>
+  <div fxFill fxLayout="column" fxFlex.gt-xs="80" fxFlexOffset.gt-xs="10">
+    <span class="color-primary mat-display-1">Fill out this form so we can Link you to Lebanon's helpers</span>
+
+    <form fxLayout="column" fxLayoutGap="20px" novalidate [formGroup]="requestForm" #rform="ngForm"
+      (ngSubmit)="onSubmit()">
+
+      <mat-card fxLayout="column">
+
+        <span class="color-primary mat-title">Personnal Information</span>
+
+        <div fxLayout="column" fxLayout.gt-xs="row" fxLayoutGap.gt-xs="20px">
+          <mat-form-field fxFlex>
+            <input matInput formControlName="firstname" placeholder="First Name" type="text" required>
+            <mat-error
+              *ngIf="requestForm.get('firstname').hasError('required') && requestForm.get('firstname').touched">
+              First
+              name is required</mat-error>
+          </mat-form-field>
+
+          <mat-form-field fxFlex>
+            <input matInput formControlName="lastname" placeholder="Last Name" type="text" required>
+            <mat-error *ngIf="requestForm.get('lastname').hasError('required') && requestForm.get('lastname').touched">
+              Last name is required</mat-error>
+          </mat-form-field>
+        </div>
+
+
+        <div fxLayout="column" fxLayout.gt-xs="row" fxLayoutGap.gt-xs="20px">
+          <mat-form-field fxFlex>
+            <input matInput formControlName="mothername" placeholder="Mother Name" type="text" required>
+            <mat-error
+              *ngIf="requestForm.get('mothername').hasError('required') && requestForm.get('mothername').touched">Mother
+              name is required</mat-error>
+          </mat-form-field>
+
+          <mat-form-field fxFlex>
+            <input matInput formControlName="fathername" placeholder="Father Name" type="text" required>
+            <mat-error
+              *ngIf="requestForm.get('fathername').hasError('required') && requestForm.get('fathername').touched">Father
+              name is required</mat-error>
+          </mat-form-field>
+        </div>
+
+        <div fxLayout="column" fxLayout.gt-xs="row" fxLayoutGap.gt-xs="20px">
+          <mat-form-field fxFlex>
+            <mat-select required placeholder="Gender" formControlName="gender">
+              <mat-option *ngFor="let ctype of gender" [value]="ctype">
+                {{ ctype }}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="requestForm.get('gender').hasError('required') && requestForm.get('gender').touched">
+              Gender is required</mat-error>
+          </mat-form-field>
+
+          <mat-form-field fxFlex>
+            <input matInput formControlName="dateOfBirth" placeholder="Date of Birth" type="date" required>
+            <mat-error
+              *ngIf="requestForm.get('dateOfBirth').hasError('required') && requestForm.get('dateOfBirth').touched">Date
+              of birth is required</mat-error>
+          </mat-form-field>
+        </div>
+
+      </mat-card>
+
+      <mat-card fxLayout="column">
+
+        <span class="color-primary mat-title">Contact & Address</span>
+
+        <div fxLayout="column" fxLayout.gt-xs="row" fxLayoutGap.gt-xs="20px">
+
+          <mat-form-field fxFlex>
+            <input matInput formControlName="telnum" placeholder="Tel. Number" type="tel" required>
+            <mat-error *ngIf="requestForm.get('telnum').hasError('required') && requestForm.get('telnum').touched">Tel.
+              Number is required</mat-error>
+          </mat-form-field>
+
+          <mat-form-field fxFlex>
+            <mat-select required placeholder="Area" formControlName="area">
+              <mat-option *ngFor="let ctype of area" [value]="ctype">
+                {{ ctype }}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="requestForm.get('area').hasError('required') && requestForm.get('area').touched">Area is
+              required</mat-error>
+          </mat-form-field>
+
+        </div>
+
+        <mat-form-field>
+          <textarea matInput formControlName="address" placeholder="Address" rows=4 required></textarea>
+          <mat-error *ngIf="requestForm.get('address').hasError('required') && requestForm.get('address').touched">
+            Address is required</mat-error>
+        </mat-form-field>
+
+      </mat-card>
+
+      <mat-card>
+        <span class="color-primary mat-title">Needs</span>
+
+        <div *ngFor="let n of needs" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="20px">
+
+          <mat-checkbox name="needs" required>
+            {{ n }}
+          </mat-checkbox>
+
+          <mat-form-field fxFlex>
+            <input matInput formControlName="needscomments" placeholder="{{n}}" type="text">
+          </mat-form-field>
+
+        </div>
+
+      </mat-card>
+
+      <button fxFlexAlign="end" mat-raised-button color="primary">Submit Form</button>
+    </form>
+  </div>
+</app-navbar>
