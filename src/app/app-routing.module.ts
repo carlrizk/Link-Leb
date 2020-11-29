@@ -5,14 +5,14 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { PartnersPageComponent } from './partners-page/partners-page.component';
 import { ProfilePageComponent } from './profile-page/profile-page.component';
-import {RequestformPageComponent} from './requestform-page/requestform-page.component';
+import { RequestformPageComponent } from './requestform-page/requestform-page.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginPageComponent },
-  { path: 'profile', component: ProfilePageComponent},
-  { path: 'aboutus', component: AboutusPageComponent},
-  { path: 'partners', component: PartnersPageComponent},
-  { path: 'requestform', component: RequestformPageComponent},
+  { path: 'profile', component: ProfilePageComponent },
+  { path: 'aboutus', component: AboutusPageComponent },
+  { path: 'partners', component: PartnersPageComponent },
+  { path: 'requestform', component: RequestformPageComponent },
   { path: '', component: HomePageComponent },
 ];
 

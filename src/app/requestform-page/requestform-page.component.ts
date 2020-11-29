@@ -25,23 +25,23 @@ export class RequestformPageComponent implements OnInit {
   }
 
 
-  createForm() {
+  createForm(): void {
     this.requestForm = this.fb.group({
-      firstname: ['', Validators.required ],
-      lastname: ['', Validators.required ],
-      mothername: ['', Validators.required ],
-      fathername: ['', Validators.required ],
-      gender: ['', Validators.required ],
+      firstname: ['', Validators.required],
+      lastname: ['', Validators.required],
+      mothername: ['', Validators.required],
+      fathername: ['', Validators.required],
+      gender: ['', Validators.required],
       dateOfBirth: [new Date(), Validators.required],
-      telnum: ['', Validators.required ],
-      area: ['', Validators.required ],
-      address: ['', Validators.required ],
+      telnum: ['', Validators.required],
+      area: ['', Validators.required],
+      address: ['', Validators.required],
       needs: [''],
       needscomments: [''],
     });
   }
 
-  onSubmit() {
+  onSubmit(): void {
     this.request = this.requestForm.value;
     console.log(this.request);
     this.requestForm.reset({
