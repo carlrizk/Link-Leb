@@ -6,6 +6,7 @@ import { LoginPageComponent } from './login-page/login-page.component';
 import { PartnersPageComponent } from './partners-page/partners-page.component';
 import { ProfilePageComponent } from './profile-page/profile-page.component';
 import {RequestformPageComponent} from './requestform-page/requestform-page.component';
+import { RequestsPageComponent } from './requests-page/requests-page.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginPageComponent },
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'aboutus', component: AboutusPageComponent},
   { path: 'partners', component: PartnersPageComponent},
   { path: 'requestform', component: RequestformPageComponent},
+  { path: 'requests', component: RequestsPageComponent },
   { path: '', component: HomePageComponent },
 ];
 
