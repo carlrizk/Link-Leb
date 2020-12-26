@@ -1,0 +1,27 @@
+<form fxLayout="column" fxLayoutGap="20px" novalidate [formGroup]="filter" #ffrom="ngForm">
+    <mat-card fxLayout="column">
+        <mat-card-content fxLayoutGap="30px" fxLayoutAlign="center">
+            <mat-form-field fxFlex="50%">
+                <input matInput formControlName="ID" placeholder="ID" type="number">
+            </mat-form-field>
+            <mat-form-field fxFlex="50%">
+                <mat-select placeholder="Area" formControlName="area">
+                    <mat-option *ngFor="let ctype of area" [value]="ctype">
+                        {{ ctype }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </mat-card-content>
+        <mat-card-content fxLayout="row" fxLayoutGap="2%">
+            <h3>Needs</h3>
+            <p *ngFor="let n of needs" [value]=n>
+                <mat-checkbox name="needs">
+                    {{n}}
+                </mat-checkbox>
+                <br>
+            </p>
+        </mat-card-content>
+
+        <button fxFlexAlign="end" mat-raised-button color="primary">Search</button>
+    </mat-card>
+</form>

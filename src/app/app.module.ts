@@ -35,6 +35,8 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { AboutusPageComponent } from './aboutus-page/aboutus-page.component';
 import { PartnersPageComponent } from './partners-page/partners-page.component';
 import { RequestformPageComponent } from './requestform-page/requestform-page.component';
+import { RequestsPageComponent } from './requests-page/requests-page.component';
+import { FilterPanelComponent } from './components/filter-panel/filter-panel.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +51,9 @@ import { RequestformPageComponent } from './requestform-page/requestform-page.co
     HomePageComponent,
     AboutusPageComponent,
     PartnersPageComponent,
-    RequestformPageComponent
+    RequestformPageComponent,
+    RequestsPageComponent,
+    FilterPanelComponent
   ],
   imports: [
     BrowserModule,
