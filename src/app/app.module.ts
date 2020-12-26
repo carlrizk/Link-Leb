@@ -37,6 +37,7 @@ import { PartnersPageComponent } from './partners-page/partners-page.component';
 import { RequestformPageComponent } from './requestform-page/requestform-page.component';
 import { RequestsPageComponent } from './requests-page/requests-page.component';
 import { FilterPanelComponent } from './components/filter-panel/filter-panel.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,7 @@ import { FilterPanelComponent } from './components/filter-panel/filter-panel.com
     PartnersPageComponent,
     RequestformPageComponent,
     RequestsPageComponent,
-    FilterPanelComponent
+    FilterPanelComponent,
   ],
   imports: [
     BrowserModule,
@@ -77,6 +78,7 @@ import { FilterPanelComponent } from './components/filter-panel/filter-panel.com
     MatInputModule,
     MatFormFieldModule,
     MatCheckboxModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -39,7 +39,7 @@
           <span class="mat-h3" fxHide.lt-md> Profile</span>
         </button>
 
-        <button mat-flat-button color="primary">
+        <button mat-flat-button color="primary" routerLink="/requests">
           <fa-icon [icon]="requestsIcon" class="mat-h3"></fa-icon>
           <span class="mat-h3" fxHide.lt-md> Requests</span>
         </button>
@@ -99,7 +99,7 @@
           <fa-icon [icon]="profileIcon"></fa-icon>
           <span>Profile </span>
         </a>
-        <a mat-list-item>
+        <a mat-list-item routerLink="/requests">
           <fa-icon [icon]="requestsIcon"></fa-icon>
           <span>Requests</span>
         </a>

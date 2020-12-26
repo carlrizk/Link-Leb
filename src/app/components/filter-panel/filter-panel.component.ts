@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Request, Area, Needs } from '../../common/models/request';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { Area, Needs } from '../../common/models/request';
 
 @Component({
   selector: 'app-filter-panel',
@@ -10,7 +10,7 @@ import { Request, Area, Needs } from '../../common/models/request';
 export class FilterPanelComponent implements OnInit {
 
   @ViewChild('fform') filterDirective;
-  filter: FormGroup
+  filter: FormGroup;
   area = Area;
   needs = Needs;
 
@@ -21,7 +21,7 @@ export class FilterPanelComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  createForm() {
+  createForm(): void {
     this.filter = this.fb.group({
       ID: [''],
       area: [''],
