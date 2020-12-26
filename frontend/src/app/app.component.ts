@@ -23,7 +23,6 @@ export class AppComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
 
     this.spinnerSubscription = this.spinnerService.updateSpinner.subscribe((shouldShow: boolean) => {
-      console.log(shouldShow);
       this.showSpinner = shouldShow;
     });
 

@@ -2,33 +2,15 @@
   <div fxLayout="row" fxLayoutAlign="center center">
     <span class="mat-title">Login</span>
   </div>
-  <form fxLayout="column">
+  <form [formGroup]="formGroup" (ngSubmit)="onSubmit()" fxLayout="column">
     <mat-form-field>
       <mat-label>Username</mat-label>
-      <input matInput>
+      <input matInput formControlName="username">
     </mat-form-field>
     <mat-form-field>
       <mat-label>Password</mat-label>
-      <input matInput>
+      <input matInput formControlName="password">
     </mat-form-field>
+    <button mat-raised-button type="submit" color="primary" [disabled]="formGroup.invalid">Login</button>
   </form>
-  <button mat-raised-button color="primary">Login</button>
 </mat-card>
-
-
-<!-- <div class="card border-primary border-width-1">
-    <div class="card-body">
-        <h3 class="card-title text-center"><b>Login</b></h3>
-        <form>
-            <div class="form-group">
-                <input [value]="currentUser.user.username" (input)="currentUser.user.username=$event.target.value" type="text " class="form-control " placeholder="Username" required>
-            </div>
-            <div class="form-group ">
-                <input [value]="currentUser.user.password" (input)="currentUser.user.password=$event.target.value" type="password" class="form-control " placeholder="Password" required>
-            </div>
-            <div class="form-group ">
-                <button (click)="onSubmit() " class="btn btn-primary btn-lg btn-block " type="submit ">Login</button>
-            </div>
-        </form>
-    </div>
-</div> -->

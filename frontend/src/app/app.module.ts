@@ -38,6 +38,7 @@ import { RequestformPageComponent } from './requestform-page/requestform-page.co
 import { RequestsPageComponent } from './requests-page/requests-page.component';
 import { FilterPanelComponent } from './components/filter-panel/filter-panel.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -78,7 +79,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     MatInputModule,
     MatFormFieldModule,
     MatCheckboxModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
