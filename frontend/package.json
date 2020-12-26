@@ -1,6 +1,8 @@
 {
-  "name": "link-leb",
-  "version": "0.0.0",
+  "name": "link-leb-front-end",
+  "version": "1.0.0",
+  "author": "Carl Rizk, Karine Ismail, Rola Hadi",
+  "license": "ISC",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
