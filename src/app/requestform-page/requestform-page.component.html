@@ -1,7 +1,8 @@
 <app-navbar>
   <div fxFill fxLayout="column" fxFlex.gt-xs="80" fxFlexOffset.gt-xs="10">
-    <span class="color-primary mat-display-1">Fill out this form so we can Link you to Lebanon's helpers</span>
-
+    <div fxLayout="column" fxLayoutAlign="center center">
+      <span class="color-primary mat-display-1">Fill out this form so we can Link you to Lebanon's helpers</span>
+    </div>
     <form fxLayout="column" fxLayoutGap="20px" novalidate [formGroup]="requestForm" #rform="ngForm"
       (ngSubmit)="onSubmit()">
 
