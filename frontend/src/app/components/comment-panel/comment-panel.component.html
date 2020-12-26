@@ -1,0 +1,33 @@
+<mat-card>
+    <mat-list>
+        <h3><b>Comments</b></h3>
+        <mat-list-item *ngFor="let comment of request.comments">
+            <p matLine> {{comment.comment}} </p>
+            <p matLine>
+                <span> -- {{comment.author}} {{comment.date | date }} </span>
+            </p>
+        </mat-list-item>
+        <mat-list-item *ngIf="commentsForm.valid">
+            <p matLine> {{commentsForm.value.comment}} </p>
+            <p matLine>
+                <span> -- {{commentsForm.value.author}} </span>
+            </p>
+        </mat-list-item>
+    </mat-list>
+
+    <form novalidate [formGroup]="commentsForm" #cform="ngForm">
+        <p>
+            <mat-form-field fxFlexFill>
+                <input matInput formControlName="author" placeholder="NGO Name" type="text" required>
+                <mat-error *ngIf="formErrors.author">{{formErrors.author}}</mat-error>
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field fxFlexFill>
+                <textarea matInput formControlName="comment" placeholder="Your Comment" rows=4></textarea>
+                <mat-error *ngIf="formErrors.comment">{{formErrors.comment}}</mat-error>
+            </mat-form-field>
+        </p>
+        <button fxFlexAlign="end" mat-raised-button color="primary" [disabled]="commentsForm.invalid">Submit</button>
+    </form>
+</mat-card>

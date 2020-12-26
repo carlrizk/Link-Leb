@@ -39,6 +39,9 @@ import { RequestsPageComponent } from './requests-page/requests-page.component';
 import { FilterPanelComponent } from './components/filter-panel/filter-panel.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { HttpClientModule } from '@angular/common/http';
+import { DetailsPageComponent } from './details-page/details-page.component';
+import { CommentPanelComponent } from './components/comment-panel/comment-panel.component';
+import { RequestDetailPanelComponent } from './components/request-detail-panel/request-detail-panel.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +59,9 @@ import { HttpClientModule } from '@angular/common/http';
     RequestformPageComponent,
     RequestsPageComponent,
     FilterPanelComponent,
+    DetailsPageComponent,
+    CommentPanelComponent,
+    RequestDetailPanelComponent,
   ],
   imports: [
     BrowserModule,

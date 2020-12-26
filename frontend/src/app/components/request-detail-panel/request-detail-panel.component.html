@@ -1,0 +1,21 @@
+<div *ngIf="requests">
+    <mat-card>
+        <mat-card-title>
+            <p>Details of request number : {{requests.id}}</p>
+        </mat-card-title>
+        <mat-card-content>
+            <p>First Name : {{requests.firstname}}</p>
+            <p>Last Name : {{requests.lastname}}</p>
+            <p>Mother's Name : {{requests.mothername}}</p>
+            <p>Father's Name : {{requests.fathername}}</p>
+            <p>Gender : {{requests.gender}}</p>
+            <p>Date Of Birth : {{requests.dateOfBirth}}</p>
+            <p>Phone Number : {{requests.telnum}}</p>
+            <p>Area : {{requests.area}}</p>
+            <p>Address : {{requests.address}}</p>
+            <p>Needs : {{requests.needs}}</p>
+            <p>Needs Comments : {{requests.needscomments}}</p>
+        </mat-card-content>
+
+    </mat-card>
+</div>

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AboutusPageComponent } from './aboutus-page/aboutus-page.component';
+import { DetailsPageComponent } from './details-page/details-page.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { PartnersPageComponent } from './partners-page/partners-page.component';
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'partners', component: PartnersPageComponent },
   { path: 'requestform', component: RequestformPageComponent },
   { path: 'requests', component: RequestsPageComponent },
+  { path: 'details', component: DetailsPageComponent },
   { path: '', component: HomePageComponent },
 ];
 
