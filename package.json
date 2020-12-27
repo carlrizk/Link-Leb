@@ -1,0 +1,24 @@
+{
+  "name": "link-leb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carlrizk/Link-Leb.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/carlrizk/Link-Leb/issues"
+  },
+  "homepage": "https://github.com/carlrizk/Link-Leb#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "mongoose": "^5.11.8",
+    "passport": "^0.4.1"
+  }
+}
