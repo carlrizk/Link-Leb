@@ -1,6 +1,7 @@
 import { FormControl } from '@angular/forms';
 
 export class Request {
+    id: number;
     firstname: string;
     lastname: string;
     mothername: string;
@@ -12,6 +13,8 @@ export class Request {
     address: string;
     needs: string;
     needscomments: string;
+    comments: string;
+  static Nil: Request;
 }
 
 export const Needs = ['Medication', 'Food', 'Renovation', 'Other'];
