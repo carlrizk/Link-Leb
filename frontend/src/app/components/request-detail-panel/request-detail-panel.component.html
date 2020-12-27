@@ -1,7 +1,8 @@
 <div *ngIf="requests">
     <mat-card>
         <mat-card-title>
-            <p>Details of request number : {{requests.id}}</p>
+            <p class="color-primary">{{title}}</p>
+            <p>Details of request number: {{requests.id}}</p>
         </mat-card-title>
         <mat-card-content>
             <p>First Name : {{requests.firstname}}</p>
@@ -16,6 +17,10 @@
             <p>Needs : {{requests.needs}}</p>
             <p>Needs Comments : {{requests.needscomments}}</p>
         </mat-card-content>
+        <mat-card-actions>
+            <button mat-raised-button color="primary" (click)="goBack()">Back</button>
+            <button mat-raised-button color="primary" (click)="setfunction()">{{name}}</button>
+        </mat-card-actions>
 
     </mat-card>
 </div>
