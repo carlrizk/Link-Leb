@@ -10,10 +10,11 @@ import { PartnersPageComponent } from './partners-page/partners-page.component';
 import { ProfilePageComponent } from './profile-page/profile-page.component';
 import { RequestformPageComponent } from './requestform-page/requestform-page.component';
 import { RequestsPageComponent } from './requests-page/requests-page.component';
+import { UserResolver } from './resolvers/user.resolver';
 
 const routes: Routes = [
   { path: 'login', component: LoginPageComponent, canActivate: [NotLoggedInGuard] },
-  { path: 'profile', component: ProfilePageComponent, canActivate: [LoggedInGuard] },
+  { path: 'profile', component: ProfilePageComponent, canActivate: [LoggedInGuard], resolve: { user: UserResolver } },
   { path: 'aboutus', component: AboutusPageComponent },
   { path: 'partners', component: PartnersPageComponent },
   { path: 'requestform', component: RequestformPageComponent },

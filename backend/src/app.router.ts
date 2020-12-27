@@ -5,6 +5,6 @@ import express from "express"
 const router = express.Router()
 
 router.use('/auth', authController)
-router.use('/user', userController)
+router.use('/users', userController)
 
 export default router
