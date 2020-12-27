@@ -26,7 +26,7 @@ export default class Mapper {
     static MapSocialMediaType(socialMediaType: ISocialMediaType): SocialMediaTypeDto {
         const result = {
             name: socialMediaType.name,
-            icon: socialMediaType.icon
+            icon: { prefix: socialMediaType.icon[0], iconName: socialMediaType.icon[1] }
         };
         return result;
     }
