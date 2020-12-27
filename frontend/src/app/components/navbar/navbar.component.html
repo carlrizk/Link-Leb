@@ -44,7 +44,7 @@
           <span class="mat-h3" fxHide.lt-md> Requests</span>
         </button>
 
-        <button mat-flat-button color="primary" routerLink="/login">
+        <button mat-flat-button color="primary" (click)="signOutClick()">
           <fa-icon [icon]="signOutIcon" class="mat-h3"></fa-icon>
           <span class="mat-h3" fxHide.lt-md> Sign Out</span>
         </button>
@@ -103,7 +103,7 @@
           <fa-icon [icon]="requestsIcon"></fa-icon>
           <span>Requests</span>
         </a>
-        <a mat-list-item routerLink="/login">
+        <a mat-list-item (click)="signOutClick()">
           <fa-icon [icon]="signOutIcon"></fa-icon>
           <span>Sign Out</span>
         </a>

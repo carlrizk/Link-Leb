@@ -11,6 +11,9 @@
       <mat-label>Password</mat-label>
       <input matInput formControlName="password">
     </mat-form-field>
+    <mat-error *ngIf="formGroup.hasError('loginFailed')">
+      Wrong Username or Password!
+    </mat-error>
     <button mat-raised-button type="submit" color="primary" [disabled]="formGroup.invalid">Login</button>
   </form>
 </mat-card>

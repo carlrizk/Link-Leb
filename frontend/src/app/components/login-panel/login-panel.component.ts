@@ -1,6 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -12,7 +13,10 @@ export class LoginPanelComponent implements OnInit {
 
   formGroup: FormGroup;
 
-  constructor(private userService: UserService) { }
+  constructor(
+    private userService: UserService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
     this.formGroup = new FormGroup({
@@ -26,9 +30,9 @@ export class LoginPanelComponent implements OnInit {
     const password = this.formGroup.get('password').value;
 
     this.userService.login(username, password).subscribe(res => {
-      console.log(res);
+      this.router.navigate(['/profile']);
     }, (err: HttpErrorResponse) => {
-      console.log(err);
+      this.formGroup.setErrors({ loginFailed: true });
     });
 
   }

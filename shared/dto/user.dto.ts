@@ -1,6 +1,7 @@
-export default interface UserDto {
-    id: String;
-    username: String;
-    displayName: String;
-    avatar: String;
+export interface UserDto {
+    id: string;
+    username: string;
+    description: string;
+    displayName: string;
+    avatar: string;
 }
