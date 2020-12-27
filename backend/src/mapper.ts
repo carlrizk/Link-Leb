@@ -1,4 +1,4 @@
-import UserDto from "../../shared/dto/user.dto";
+import {UserDto }from "../../shared/dto/user.dto";
 
 export default class Mapper {
     
@@ -6,6 +6,7 @@ export default class Mapper {
         const result: UserDto = {
             id: user.id,
             username: user.username,
+            description: user.description,
             displayName: user.displayName,
             avatar: user.avatar
         }

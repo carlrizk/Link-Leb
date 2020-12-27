@@ -1,10 +1,10 @@
-import express from "express"
-import bodyParser from "body-parser"
+import  express from "express"
+import  bodyParser from "body-parser"
 import passport from "passport"
 import mongoose from "mongoose"
 import AppRouter from "./app.router"
 import authStrategy from "./auth/auth.strategy"
-import cors from "cors"
+import  cors from "cors"
 
 const app = express()
 
