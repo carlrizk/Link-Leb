@@ -1,11 +1,11 @@
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 
-export class SocialMedia {
-    type: SocialMediaType;
-    url: string;
+export class Need {
+    type: NeedType;
+    comment: string;
 }
 
-export class SocialMediaType {
+export class NeedType {
     id: string;
     name: string;
     icon: IconProp;

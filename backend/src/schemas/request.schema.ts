@@ -1,4 +1,5 @@
 import { Schema, Document, model } from "mongoose"
+import { IconSchema, IIcon } from "./icon.schema"
 
 
 interface INeed {
@@ -9,10 +10,12 @@ interface INeed {
 interface INeedType extends Document {
     id: string;
     name: string;
+    icon: IIcon
 }
 
 const NeedTypeSchema = new Schema({
-    name: String
+    name: String,
+    icon: IconSchema
 })
 
 interface IRequest extends Document {

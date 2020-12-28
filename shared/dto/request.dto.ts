@@ -1,3 +1,5 @@
+import { IconDto } from "./icon.dto";
+
 export interface RequestDto {
     id: string,
     firstName: string,
@@ -13,11 +15,12 @@ export interface RequestDto {
 }
 
 export interface NeedDto {
-    type: NeedTypeDto;
+    type: string;
     comment: string;
 }
 
 export interface NeedTypeDto {
     id: string;
     name: string;
+    icon: IconDto;
 }

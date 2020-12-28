@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 
 import { faHome, faInfoCircle, faUsers, faSignOutAlt, faSignInAlt, faLifeRing, faUserCircle, faBars } from '@fortawesome/free-solid-svg-icons';
 import { Subscription } from 'rxjs';
-import { User } from 'src/app/models/user.model';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -28,20 +27,20 @@ export class NavbarComponent implements OnInit, OnDestroy {
   constructor(
     private userService: UserService,
     private router: Router
-    ) { }
+  ) { }
 
   loggedIn = false;
 
   ngOnInit(): void {
 
     this.loginSubscription = this.userService.onLogin.subscribe(user => {
-      if (user !== User.Nil) {
+      if (user !== null) {
         this.loggedIn = true;
       }
     });
 
     this.logoutSubscription = this.userService.onLogout.subscribe(user => {
-      if (user !== User.Nil) {
+      if (user !== null) {
         this.loggedIn = false;
       }
     });

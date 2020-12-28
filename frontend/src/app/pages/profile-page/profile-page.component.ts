@@ -10,7 +10,7 @@ import { User } from '../../models/user.model';
 })
 export class ProfilePageComponent implements OnInit, OnDestroy {
 
-  user: User = User.Nil;
+  user: User;
 
   private routeSubscription: Subscription;
 

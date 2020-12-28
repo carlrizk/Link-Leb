@@ -1,13 +1,13 @@
 import express from "express"
 import { CallbackError } from "mongoose"
+import passport from "passport"
 import Mapper from "../mapper"
-import { RequestModel } from "../schemas/request.schema"
+import { IRequest, RequestModel } from "../schemas/request.schema"
 
 const router = express.Router()
 
-router.get('/:requestId', (req, res) => {
+router.get('/:requestId', passport.authenticate('local'), (req, res) => {
     RequestModel.findById(req.params.requestId)
-        .populate("needs.needType")
         .exec((err: CallbackError, request) => {
             if (err) {
                 console.error(err)
@@ -21,28 +21,20 @@ router.get('/:requestId', (req, res) => {
         })
 })
 
-
-router.post('/', async (req, res) => {
-    const request = new RequestModel(
-        {
-            firstName: "Rola",
-            lastName: "Hadi",
-            motherName: "Ghazwa",
-            fatherName: "Talal",
-            gender: "Female",
-            dateOfBirth: new Date(),
-            telNumber: "70471512",
-            area: "Beirut",
-            dateOfSubmit: new Date(),
-            needs: [{
-                needType: "5fe9f903bfa51b4974cb007c",
-                comment: "Antibiotique"
-            }, {
-                needType: "5fe9f903bfa51b4974cb007d",
-                comment: "Milk for Kids"
-            }]
+router.get('/', passport.authenticate('local'), (req, res) => {
+    RequestModel.find()
+        .exec((err: CallbackError, requests: IRequest[]) => {
+            if (err) {
+                console.error(err)
+                res.status(500).send();
+            }
+            if (requests != null) {
+                res.send(Mapper.MapRequests(requests));
+            } else {
+                res.status(404).send();
+            }
         })
-    res.send(await request.save())
 })
+
 
 export default router

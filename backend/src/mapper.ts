@@ -7,7 +7,7 @@ export default class Mapper {
 
     static MapUser(user: IUser): UserDto {
         const result: UserDto = {
-            id: user.id || "",
+            id: user._id,
             username: user.username,
             description: user.description,
             displayName: user.displayName,
@@ -19,7 +19,7 @@ export default class Mapper {
 
     static MapRequest(request: IRequest): RequestDto {
         const result: RequestDto = {
-            id: request.id || "",
+            id: request._id,
             firstName: request.firstName,
             lastName: request.lastName,
             motherName: request.motherName,
@@ -34,32 +34,46 @@ export default class Mapper {
         return result
     }
 
-    static MapSocialMedia(socialMedia: ISocialMedia): SocialMediaDto {
-        const result = {
-            url: socialMedia.url,
-            type: Mapper.MapSocialMediaType(socialMedia.socialMediaType)
-        }
-        return result;
+    static MapRequests(requests: IRequest[]): RequestDto[] {
+        return requests.map(req => Mapper.MapRequest(req));
     }
 
-    static MapSocialMediaType(socialMediaType: ISocialMediaType): SocialMediaTypeDto {
-        const result = {
-            name: socialMediaType.name,
-            icon: { prefix: socialMediaType.icon[0], iconName: socialMediaType.icon[1] }
-        };
-        return result;
-    }
-    static MapNeed(need: INeed): NeedDto {
-        const result = {
-            comment: need.comment,
-            type: Mapper.MapNeedType(need.needType)
+    static MapSocialMedia(socialMedia: ISocialMedia): SocialMediaDto {
+        return {
+            url: socialMedia.url,
+            type: socialMedia.socialMediaType._id
         }
-        return result;
+    }
+
+    static MapSocialMediaTypes(socialMediaTypes: ISocialMediaType[]): SocialMediaTypeDto[] {
+        return socialMediaTypes.map(smt => Mapper.MapSocialMediaType(smt));
+    }
+    static MapSocialMediaType(socialMediaType: ISocialMediaType): SocialMediaTypeDto {
+        return {
+            id: socialMediaType._id,
+            name: socialMediaType.name,
+            icon: socialMediaType.icon
+        };
+    }
+
+    static MapNeed(need: INeed): NeedDto {
+        return {
+            comment: need.comment,
+            type: need.needType._id
+        }
+    }
+
+    static MapNeedTypes(needTypes: INeedType[]): NeedTypeDto[] {
+        return needTypes.map(nt => Mapper.MapNeedType(nt))
     }
     static MapNeedType(needType: INeedType): NeedTypeDto {
-        const result = {
+        return {
+            id: needType._id,
             name: needType.name,
+            icon: {
+                prefix: needType.icon.prefix,
+                iconName: needType.icon.iconName
+            }
         };
-        return result;
     }
 }

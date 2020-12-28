@@ -1,27 +1,23 @@
 import express from "express"
 import { CallbackError } from "mongoose"
-import passport from "passport"
 import Mapper from "../mapper"
-import { UserModel } from "../schemas/user.schema"
-
+import { ISocialMediaType, SocialMediaTypeModel } from "../schemas/user.schema"
 
 const router = express.Router()
 
-
-router.get('/:userId', passport.authenticate("local"), (req, res) => {
-    UserModel.findById(req.params.userId)
-        .exec((err: CallbackError, user) => {
+router.get('/', (req, res) => {
+    SocialMediaTypeModel.find()
+        .exec((err: CallbackError, socialMediaTypes: ISocialMediaType[]) => {
             if (err) {
                 console.error(err)
                 res.status(500).send();
             }
-            if (user != null) {
-                res.send(Mapper.MapUser(user));
+            if (socialMediaTypes != null) {
+                res.send(Mapper.MapSocialMediaTypes(socialMediaTypes));
             } else {
                 res.status(404).send();
             }
         })
 })
-
 
 export default router
