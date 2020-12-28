@@ -18,7 +18,9 @@
 
     <ng-container matColumnDef="needs">
       <th mat-header-cell *matHeaderCellDef> Needs </th>
-      <td mat-cell *matCellDef="let req"> {{ "needs" }} </td>
+      <td mat-cell *matCellDef="let req" fxLayoutGap="5px">
+        <fa-icon *ngFor="let need of req.needs" [icon]="need.type.icon" class="mat-h3"></fa-icon>
+      </td>
     </ng-container>
 
     <ng-container matColumnDef="dateOfSubmit">
@@ -28,7 +30,8 @@
 
     <ng-container matColumnDef="viewDetails">
       <th mat-header-cell *matHeaderCellDef></th>
-      <td mat-cell *matCellDef="let req"> <button mat-raised-button color="primary" (click)="viewDetails(req.id)">Details</button> </td>
+      <td mat-cell *matCellDef="let req"> <button mat-raised-button color="primary"
+          (click)="viewDetails(req.id)">Details</button> </td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
