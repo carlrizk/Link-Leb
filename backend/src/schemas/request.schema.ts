@@ -3,7 +3,7 @@ import { IconSchema, IIcon } from "./icon.schema"
 
 
 interface INeed {
-    needType: INeedType;
+    needType: string;
     comment: string;
 }
 
@@ -27,7 +27,7 @@ interface IRequest extends Document {
     dateOfBirth: Date,
     telNumber: string,
     area: string,
-    dateOfSubmit: Date,
+    dateOfSubmit: string,
     needs: INeed[];
 }
 const RequestSchema = new Schema({

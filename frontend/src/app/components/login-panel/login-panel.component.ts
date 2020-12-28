@@ -36,6 +36,7 @@ export class LoginPanelComponent implements OnInit {
       this.router.navigate(['/profile']);
     }, (err: HttpErrorResponse) => {
       this.formGroup.setErrors({ loginFailed: true });
+      this.spinnerService.hide();
     },
       () => {
         this.spinnerService.hide();
