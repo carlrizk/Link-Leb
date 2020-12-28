@@ -21,7 +21,7 @@ const routes: Routes = [
   {
     path: 'profile', component: ProfilePageComponent,
     canActivate: [LoggedInGuard],
-    resolve: { user: UserResolver, socialMediaIcons: SocialMediaIconsResolver }
+    resolve: { user: UserResolver, socialMediaIcons: SocialMediaIconsResolver, needTypeIcons: NeedTypeIconResolver }
   },
   { path: 'aboutus', component: AboutusPageComponent },
   { path: 'partners', component: PartnersPageComponent },
@@ -29,7 +29,10 @@ const routes: Routes = [
     path: 'requestform', component: RequestformPageComponent,
     resolve: { needTypes: NeedTypesResolver, needTypeIcons: NeedTypeIconResolver }
   },
-  { path: 'requests', component: RequestsPageComponent, canActivate: [LoggedInGuard], resolve: { requests: RequestsResolver } },
+  {
+    path: 'requests', component: RequestsPageComponent, canActivate: [LoggedInGuard],
+    resolve: { requests: RequestsResolver, needTypeIcons: NeedTypeIconResolver }
+  },
   { path: 'details', component: DetailsPageComponent, canActivate: [LoggedInGuard] },
   { path: '', component: HomePageComponent },
 ];
