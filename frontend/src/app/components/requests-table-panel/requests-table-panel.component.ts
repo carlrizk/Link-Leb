@@ -1,8 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { HttpErrorResponse } from '@angular/common/http';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { Request } from '../../models/request.model';
-
-
+import { Router } from '@angular/router';
+import { SpinnerService } from 'src/app/services/spinner.service';
+import { RequestService } from 'src/app/services/request.service';
 @Component({
   selector: 'app-requests-table-panel',
   templateUrl: './requests-table-panel.component.html',
@@ -17,12 +19,25 @@ export class RequestsTablePanelComponent implements OnInit {
   previousIcon = faChevronLeft;
   nextIcon = faChevronRight;
 
-  constructor() { }
+  constructor(
+    private router: Router,
+    private requestService: RequestService,
+    private spinnerService: SpinnerService
+  ){}
 
   ngOnInit(): void { }
 
   viewDetails(id: string): void {
     console.log(id);
+    this.spinnerService.show();
+    this.requestService.getRequest(id).subscribe(res => {
+    this.router.navigate(["/requests/"+id]);},
+    (err: HttpErrorResponse) => {},
+      () => {
+        this.spinnerService.hide();
+      }
+    
+    )
   }
 
 }
