@@ -9,6 +9,12 @@
   "author": "Carl Rizk, Karine Ismail, Rola Hadi",
   "license": "ISC",
   "dependencies": {
+    "@angular/cdk": "^11.0.3",
+    "@angular/core": "^11.0.5",
+    "@angular/material": "^11.0.3",
+    "@fortawesome/free-brands-svg-icons": "^5.15.1",
+    "@fortawesome/free-solid-svg-icons": "^5.15.1",
+    "@ngx-share/core": "^7.1.4",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
