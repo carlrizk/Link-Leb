@@ -7,7 +7,7 @@ import { UserModel } from "../schemas/user.schema"
 
 const router = express.Router()
 
-router.get('/:userId', passport.authenticate("local"), (req, res) => {
+router.get(':userId', passport.authenticate("local"), (req, res) => {
     UserModel.findById(req.params.userId)
         .populate("socialMedias.socialMediaType")
         .exec((err: CallbackError, user) => {

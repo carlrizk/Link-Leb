@@ -5,7 +5,7 @@ import {RequestModel} from "../schemas/request.schema"
 
 const router = express.Router()
 
-router.get('/:requestId', (req, res) => {
+router.get(':requestId', (req, res) => {
     RequestModel.findById(req.params.requestId)
         .populate("needs.needType")
         .exec((err: CallbackError, request) => {

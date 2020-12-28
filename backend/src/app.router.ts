@@ -6,5 +6,6 @@ const router = express.Router()
 
 router.use('/auth', authController)
 router.use('/users', userController)
+router.use("/requests", requestController)
 
 export default router
