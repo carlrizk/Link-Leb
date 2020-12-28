@@ -39,8 +39,6 @@ export class RequestformPageComponent implements OnInit {
       });
     });
 
-    console.log(needsControls);
-
     this.requestForm = new FormGroup({
       firstname: new FormControl('', Validators.required),
       lastname: new FormControl('', Validators.required),
