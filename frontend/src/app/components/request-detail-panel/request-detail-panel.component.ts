@@ -1,6 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-import {Request, Needs, Area, Gender} from '../../common/models/request';
-import { Location } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
+import { faBookmark } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-request-detail-panel',
@@ -8,30 +7,22 @@ import { Location } from '@angular/common';
   styleUrls: ['./request-detail-panel.component.scss']
 })
 export class RequestDetailPanelComponent implements OnInit {
-  
-  @Input() requests: Request[] = [Request.Nil];
 
-  public name: string = 'Bookmark';
-  public title: string = 'Not Bookmarked';
- 
+  bookrmarkIcon = faBookmark;
 
-  constructor(private location: Location) { }
+  bookmarked = false;
+
+  constructor() { }
 
   ngOnInit(): void {
   }
 
-  setfunction(): void {
-    if(this.name === 'Bookmark') { 
-      this.name = 'Remove from Bookmarks'
-      this.title = 'Bookmarked'
-    } else {
-      this.name = 'Bookmark'
-      this.title = 'Not Bookmarked'
-    }
+  bookmarkRequest(): void {
+    this.bookmarked = true;
   }
 
-  goBack(): void {
-    this.location.go("requests");
+  unbookmarkRequest(): void {
+    this.bookmarked = false;
   }
 
 }

@@ -1,26 +1,33 @@
-<div *ngIf="requests">
-    <mat-card>
+<mat-card>
+    <div fxLayout="row" fxLayoutAlign="space-between">
         <mat-card-title>
-            <p class="color-primary">{{title}}</p>
-            <p>Details of request number: {{requests.id}}</p>
+            <span class="mat-title-2">ID: </span>
         </mat-card-title>
-        <mat-card-content>
-            <p>First Name : {{requests.firstname}}</p>
-            <p>Last Name : {{requests.lastname}}</p>
-            <p>Mother's Name : {{requests.mothername}}</p>
-            <p>Father's Name : {{requests.fathername}}</p>
-            <p>Gender : {{requests.gender}}</p>
-            <p>Date Of Birth : {{requests.dateOfBirth}}</p>
-            <p>Phone Number : {{requests.telnum}}</p>
-            <p>Area : {{requests.area}}</p>
-            <p>Address : {{requests.address}}</p>
-            <p>Needs : {{requests.needs}}</p>
-            <p>Needs Comments : {{requests.needscomments}}</p>
-        </mat-card-content>
-        <mat-card-actions>
-            <button mat-raised-button color="primary" (click)="goBack()">Back</button>
-            <button mat-raised-button color="primary" (click)="setfunction()">{{name}}</button>
-        </mat-card-actions>
-
-    </mat-card>
-</div>
+        <div *ngIf="bookmarked; then thenBlock else elseBlock"></div>
+        <ng-template #elseBlock>
+            <button mat-raised-button color="primary" (click)="bookmarkRequest()">
+                <fa-icon [icon]="bookrmarkIcon"></fa-icon>
+                <span class="mat-h3" fxHide.lt-md> Bookmark</span>
+            </button>
+        </ng-template>
+        <ng-template #thenBlock>
+            <button mat-stroked-button color="primary" (click)="unbookmarkRequest()">
+                <fa-icon [icon]="bookrmarkIcon"></fa-icon>
+                <span class="mat-h3" fxHide.lt-md> Bookmarked</span>
+            </button>
+        </ng-template>
+    </div>
+    <mat-card-content fxLayout="column">
+        <span class="mat-subheading-2">First Name:</span>
+        <span class="mat-subheading-2">Last Name:</span>
+        <span class="mat-subheading-2">Mother's Name:</span>
+        <span class="mat-subheading-2">Father's Name:</span>
+        <span class="mat-subheading-2">Gender:</span>
+        <span class="mat-subheading-2">Date Of Birth:</span>
+        <span class="mat-subheading-2">Phone Number:</span>
+        <span class="mat-subheading-2">Area:</span>
+        <span class="mat-subheading-2">Address:</span>
+        <span class="mat-subheading-2">Needs:</span>
+        <span class="mat-subheading-2">Needs Comments:</span>
+    </mat-card-content>
+</mat-card>
