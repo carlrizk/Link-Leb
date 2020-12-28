@@ -1,6 +1,7 @@
 import express from "express"
-import { CallbackError } from "mongoose"
+import { CallbackError, Document } from "mongoose"
 import passport from "passport"
+import { SubmitRequestDto } from "../../../shared/dto/request.dto"
 import Mapper from "../mapper"
 import { IRequest, RequestModel } from "../schemas/request.schema"
 
@@ -35,6 +36,21 @@ router.get('/', passport.authenticate('local'), (req, res) => {
             }
         })
 })
+
+router.post('/', (req, res) => {
+    const request: SubmitRequestDto = req.body;
+    const requestModel = new RequestModel(Mapper.MapRequestFromDto(request));
+    requestModel.save((err: CallbackError, result) => {
+        if (err) {
+            console.log(err)
+            res.status(500).send();
+        } else if (result == null) {
+            res.status(500).send();
+        } else {
+            res.send();
+        }
+    })
+});
 
 
 export default router

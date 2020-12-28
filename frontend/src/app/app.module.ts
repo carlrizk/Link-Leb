@@ -1,12 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-
 import 'hammerjs';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SocialMediaInformationPanelComponent } from './components/social-media-information-panel/social-media-information-panel.component';
@@ -41,6 +38,8 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { AboutusPageComponent } from './pages/aboutus-page/aboutus-page.component';
 import { PartnersPageComponent } from './pages/partners-page/partners-page.component';
 import { RequestformPageComponent } from './pages/requestform-page/requestform-page.component';
+import { MatDialogModule } from '@angular/material/dialog';
+
 
 @NgModule({
   declarations: [
@@ -83,7 +82,8 @@ import { RequestformPageComponent } from './pages/requestform-page/requestform-p
     MatFormFieldModule,
     MatCheckboxModule,
     MatProgressSpinnerModule,
-    HttpClientModule
+    HttpClientModule,
+    MatDialogModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
