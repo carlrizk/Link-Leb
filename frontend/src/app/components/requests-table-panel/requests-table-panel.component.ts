@@ -21,4 +21,8 @@ export class RequestsTablePanelComponent implements OnInit {
 
   ngOnInit(): void { }
 
+  viewDetails(id: string): void {
+    console.log(id);
+  }
+
 }
