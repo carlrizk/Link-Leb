@@ -1,8 +1,11 @@
-import { UserDto } from '../../../../shared/dto/user.dto';
+import { IconProp } from '@fortawesome/fontawesome-svg-core';
+import { SocialMediaDto, SocialMediaTypeDto, UserDto } from '../../../../shared/dto/user.dto';
+import { SocialMediaType } from '../common/models/social-media-type.model';
 import { SocialMedia } from '../common/models/social-media.model';
 import { User } from '../common/models/user.model';
 
 export default class Mapper {
+
     static UserDto_User(userDto: UserDto): User {
         return {
             id: userDto.id,
@@ -10,7 +13,21 @@ export default class Mapper {
             description: userDto.description,
             displayName: userDto.displayName,
             avatar: userDto.avatar,
-            socialMedias: [SocialMedia.Nil]
+            socialMedias: userDto.socialMedias.map(sm => Mapper.SocialMediaDto_SocialMedia(sm))
+        };
+    }
+
+    static SocialMediaDto_SocialMedia(socialMediaDto: SocialMediaDto): SocialMedia {
+        return {
+            url: socialMediaDto.url,
+            type: Mapper.SocialMediaTypeDto_SocialMediaType(socialMediaDto.type)
+        };
+    }
+
+    static SocialMediaTypeDto_SocialMediaType(socialMediaTypeDto: SocialMediaTypeDto): SocialMediaType {
+        return {
+            name: socialMediaTypeDto.name,
+            icon: socialMediaTypeDto.icon as IconProp
         };
     }
 }

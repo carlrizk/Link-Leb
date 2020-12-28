@@ -24,12 +24,9 @@ interface IRequest extends Document {
     telNumber : String,
     area: String,
     dateOfSubmit: Date,
-    Needs:[{
-        type:Schema.Types.ObjectId,
-        comment: String
-    }]
+    Needs:INeed[];
 }
-const Request = new Schema({
+const RequestSchema = new Schema({
     firstName: String,
     lastName: String,
     motherName: String,
@@ -45,4 +42,8 @@ const Request = new Schema({
     }]
 })
 
-export default model("Request", Request, "Request")
+const RequestModel = model<IRequest>("Request", RequestSchema, "Request")
+const NeedTypeModel = model<INeedType>("NeedType", NeedTypeSchema, "NeedType")
+
+
+export { IRequest, INeed, INeedType, RequestModel, NeedTypeModel }

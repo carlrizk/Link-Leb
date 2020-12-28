@@ -12,7 +12,7 @@ import { SpinnerService } from './spinner.service';
 })
 export class UserService {
 
-  private user: User = User.Nil;
+  private currentUser: User = User.Nil;
   private params: HttpParams;
 
   public onLogin = new BehaviorSubject<User>(User.Nil);
@@ -23,23 +23,27 @@ export class UserService {
     private spinnerService: SpinnerService
   ) { }
 
+  getUser(id: string = this.currentUser.id): Observable<User> {
+    return this.httpClient.get<UserDto>('/api/users/' + id).pipe(
+      map(userDto => Mapper.UserDto_User(userDto))
+    );
+  }
+
   isLoggedIn(): boolean {
-    return this.user !== User.Nil;
+    return this.currentUser !== User.Nil;
   }
 
   login(username: string, password: string): Observable<User> {
 
-    const params: HttpParams = new HttpParams();
-    params.append("username", username);
-    params.append("password", password);
+    const credentialsParams: HttpParams = new HttpParams().set('username', username).set('password', password);
 
     this.spinnerService.show();
-    return this.httpClient.post<UserDto>('api/auth/login', undefined, { params: params }).pipe(
+    return this.httpClient.post<UserDto>('api/auth/login', undefined, { params: credentialsParams }).pipe(
       map(userDto => {
-        this.user = Mapper.UserDto_User(userDto);
-        this.params = params;
-        this.onLogin.next(this.user);
-        return this.user;
+        this.currentUser = Mapper.UserDto_User(userDto);
+        this.params = credentialsParams;
+        this.onLogin.next(this.currentUser);
+        return this.currentUser;
       }),
       finalize(() => {
         this.spinnerService.hide();
@@ -48,18 +52,16 @@ export class UserService {
   }
 
   logout(): Observable<User> {
-    if (this.user !== User.Nil) {
-      const oldUser = this.user;
-      this.user = User.Nil;
+    if (this.currentUser !== User.Nil) {
+      const oldUser = this.currentUser;
+      this.currentUser = User.Nil;
       this.onLogout.next(oldUser);
       return of(oldUser);
     }
     return of(User.Nil);
   }
 
-  addCredentials(request: HttpRequest<unknown>): void {
-    this.params.keys().forEach(key => {
-      request.params.append(key, this.params.get(key));
-    });
+  addCredentials(request: HttpRequest<unknown>): HttpRequest<unknown> {
+    return request.clone({params: this.params});
   }
 }

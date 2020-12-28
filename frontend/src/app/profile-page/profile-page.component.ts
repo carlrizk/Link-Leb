@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { User } from '../common/models/user.model';
 
 @Component({
@@ -6,12 +8,20 @@ import { User } from '../common/models/user.model';
   templateUrl: './profile-page.component.html',
   styleUrls: ['./profile-page.component.scss']
 })
-export class ProfilePageComponent implements OnInit {
+export class ProfilePageComponent implements OnInit, OnDestroy {
 
   user: User = User.Nil;
 
-  constructor() { }
+  private routeSubscription: Subscription;
 
-  ngOnInit(): void {}
+  constructor(private route: ActivatedRoute) { }
+
+  ngOnInit(): void {
+    this.routeSubscription = this.route.data.subscribe(res => this.user = res.user);
+  }
+
+  ngOnDestroy(): void {
+    this.routeSubscription.unsubscribe();
+  }
 
 }

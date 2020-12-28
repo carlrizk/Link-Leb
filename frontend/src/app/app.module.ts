@@ -38,10 +38,11 @@ import { RequestformPageComponent } from './requestform-page/requestform-page.co
 import { RequestsPageComponent } from './requests-page/requests-page.component';
 import { FilterPanelComponent } from './components/filter-panel/filter-panel.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { DetailsPageComponent } from './details-page/details-page.component';
 import { CommentPanelComponent } from './components/comment-panel/comment-panel.component';
 import { RequestDetailPanelComponent } from './components/request-detail-panel/request-detail-panel.component';
+import { AuthInterceptor } from './interceptors/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -88,7 +89,9 @@ import { RequestDetailPanelComponent } from './components/request-detail-panel/r
     MatProgressSpinnerModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

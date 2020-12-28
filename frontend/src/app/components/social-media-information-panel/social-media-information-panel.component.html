@@ -1,10 +1,12 @@
 <div fxLayout="column" fxLayoutGap="5px">
   <div *ngFor="let socialMedia of socialMedias">
     <mat-card fxLayout="row" fxLayoutAlign="space-between space-between" fxLayoutGap="5px" class="align-items-center">
-      <fa-icon [icon]="socialMedia.type.icon" class="mat-title"></fa-icon>
-      <span class="mat-title">{{ socialMedia.type.name }}</span>
-      <a [href]="socialMedia.url"
-        class="mat-subheading-2 text-truncate text-secondary"><span>{{ socialMedia.url }}</span></a>
+      <div fxLayout="row" fxLayoutGap="5px" class="text-truncate">
+        <fa-icon [icon]="socialMedia.type.icon" class="mat-title"></fa-icon>
+        <span class="mat-title text-truncate">{{ socialMedia.type.name }}</span>
+      </div>
+      <a [href]="socialMedia.url" class="mat-subheading-2 text-truncate text-secondary"><span>{{ socialMedia.url
+          }}</span></a>
     </mat-card>
   </div>
 </div>
