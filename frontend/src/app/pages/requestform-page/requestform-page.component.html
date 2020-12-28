@@ -99,14 +99,16 @@
       <mat-card formGroupName="needs">
         <span class="color-primary mat-title">Needs</span>
 
-        <div *ngFor="let n of needs" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="20px">
+        <div *ngFor="let n of needTypes | keyvalue" formGroupName="{{ n.key }}" fxLayout="row"
+          fxLayoutAlign="center center" fxLayoutGap="20px">
 
-          <mat-checkbox formControlName="{{n}}">
-            {{ n }}
+          <mat-checkbox formControlName="isNeeded">
+            <fa-icon [icon]="n.value.icon" class="mat-h3"></fa-icon>
+            {{ n.value.name }}
           </mat-checkbox>
 
           <mat-form-field fxFlex>
-            <input matInput formControlName="{{n+'-comments'}}" placeholder="Comments" type="text">
+            <input matInput formControlName="comments" placeholder="Comments" type="text">
           </mat-form-field>
 
         </div>

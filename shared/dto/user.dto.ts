@@ -1,3 +1,5 @@
+import { IconDto } from "./icon.dto";
+
 export interface UserDto {
     id: string;
     username: string;
@@ -8,11 +10,12 @@ export interface UserDto {
 }
 
 export interface SocialMediaDto {
-    type: SocialMediaTypeDto;
+    type: string;
     url: string;
 }
 
 export interface SocialMediaTypeDto {
+    id: string;
     name: string;
-    icon: { prefix: string, iconName: string };
+    icon: IconDto;
 }

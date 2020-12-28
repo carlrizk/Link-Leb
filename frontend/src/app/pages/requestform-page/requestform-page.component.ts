@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 import { AreasConfig } from 'src/app/config/area.config';
 import { GendersConfig } from 'src/app/config/gender.config';
-import { NeedsConfig } from 'src/app/config/needs.config';
+import { NeedType } from 'src/app/models/need.model';
 
 @Component({
   selector: 'app-requestform-page',
@@ -14,22 +15,31 @@ export class RequestformPageComponent implements OnInit {
   requestForm: FormGroup;
   genderTypes: string[] = GendersConfig;
   area: string[] = AreasConfig;
-  needs: string[] = NeedsConfig;
+  needTypes: Map<string, NeedType>;
 
-  constructor() {
+  constructor(private route: ActivatedRoute) {
   }
 
   ngOnInit(): void {
+
+    this.needTypes = this.route.snapshot.data.needTypes;
+
+
     this.createForm();
   }
 
   createForm(): void {
 
-    const needsControls: { [key: string]: FormControl } = {};
-    NeedsConfig.forEach(needType => {
-      needsControls[needType] = new FormControl(false);
-      needsControls[needType + '-comments'] = new FormControl('');
+    const needsControls: { [key: string]: AbstractControl } = {};
+
+    this.needTypes.forEach(needType => {
+      needsControls[needType.id] = new FormGroup({
+        isNeeded: new FormControl(null),
+        comments: new FormControl('')
+      });
     });
+
+    console.log(needsControls);
 
     this.requestForm = new FormGroup({
       firstname: new FormControl('', Validators.required),

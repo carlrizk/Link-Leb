@@ -1,27 +1,23 @@
 import express from "express"
 import { CallbackError } from "mongoose"
-import passport from "passport"
 import Mapper from "../mapper"
-import { UserModel } from "../schemas/user.schema"
-
+import { INeedType, NeedTypeModel } from "../schemas/request.schema"
 
 const router = express.Router()
 
-
-router.get('/:userId', passport.authenticate("local"), (req, res) => {
-    UserModel.findById(req.params.userId)
-        .exec((err: CallbackError, user) => {
+router.get('/', (req, res) => {
+    NeedTypeModel.find()
+        .exec((err: CallbackError, needTypes: INeedType[]) => {
             if (err) {
                 console.error(err)
                 res.status(500).send();
             }
-            if (user != null) {
-                res.send(Mapper.MapUser(user));
+            if (needTypes != null) {
+                res.send(Mapper.MapNeedTypes(needTypes));
             } else {
                 res.status(404).send();
             }
         })
 })
-
 
 export default router

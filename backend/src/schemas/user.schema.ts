@@ -1,4 +1,5 @@
 import { Schema, Document, model } from "mongoose"
+import { IconSchema, IIcon } from "./icon.schema"
 
 interface ISocialMedia {
     socialMediaType: ISocialMediaType;
@@ -7,12 +8,12 @@ interface ISocialMedia {
 
 interface ISocialMediaType extends Document {
     name: string;
-    icon: string[];
+    icon: IIcon;
 }
 
 const SocialMediaTypeSchema = new Schema({
     name: String,
-    icon: [String]
+    icon: IconSchema
 })
 
 interface IUser extends Document {

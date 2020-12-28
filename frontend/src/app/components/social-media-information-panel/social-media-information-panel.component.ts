@@ -1,6 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
-import { SocialMediaConfig } from 'src/app/config/social-media.config';
 import { SocialMedia } from 'src/app/models/social-media.model';
 
 @Component({
@@ -10,13 +8,7 @@ import { SocialMedia } from 'src/app/models/social-media.model';
 })
 export class SocialMediaInformationPanelComponent implements OnInit {
 
-  @Input() socialMedias: SocialMedia[] = [SocialMedia.Nil];
-
-  constructor(library: FaIconLibrary) {
-    SocialMediaConfig.forEach(smc => {
-      library.addIcons(smc);
-    });
-  }
+  @Input() socialMedias: SocialMedia[] = [];
 
   ngOnInit(): void { }
 

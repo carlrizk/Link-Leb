@@ -8,7 +8,7 @@ import { User } from 'src/app/models/user.model';
 })
 export class ProfileInformationPanelComponent implements OnInit {
 
-  @Input() user: User = User.Nil;
+  @Input() user: User;
 
   constructor() { }
 
