@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { User } from '../common/models/user.model';
+import { User } from '../../models/user.model';
 
 @Component({
   selector: 'app-profile-page',

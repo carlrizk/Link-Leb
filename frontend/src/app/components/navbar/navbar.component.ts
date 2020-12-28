@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 
 import { faHome, faInfoCircle, faUsers, faSignOutAlt, faSignInAlt, faLifeRing, faUserCircle, faBars } from '@fortawesome/free-solid-svg-icons';
 import { Subscription } from 'rxjs';
-import { User } from 'src/app/common/models/user.model';
+import { User } from 'src/app/models/user.model';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({

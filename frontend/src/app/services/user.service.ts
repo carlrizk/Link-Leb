@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, of } from 'rxjs';
 import { finalize, map } from 'rxjs/operators';
 import { UserDto } from '../../../../shared/dto/user.dto';
-import { User } from '../common/models/user.model';
+import { User } from '../models/user.model';
 import Mapper from '../helpers/mappers';
 import { SpinnerService } from './spinner.service';
 

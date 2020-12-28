@@ -1,8 +1,8 @@
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { SocialMediaDto, SocialMediaTypeDto, UserDto } from '../../../../shared/dto/user.dto';
-import { SocialMediaType } from '../common/models/social-media-type.model';
-import { SocialMedia } from '../common/models/social-media.model';
-import { User } from '../common/models/user.model';
+import { SocialMediaType } from '../models/social-media-type.model';
+import { SocialMedia } from '../models/social-media.model';
+import { User } from '../models/user.model';
 
 export default class Mapper {
 

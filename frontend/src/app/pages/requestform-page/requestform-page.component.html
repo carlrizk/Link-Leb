@@ -46,7 +46,7 @@
         <div fxLayout="column" fxLayout.gt-xs="row" fxLayoutGap.gt-xs="20px">
           <mat-form-field fxFlex>
             <mat-select required placeholder="Gender" formControlName="gender">
-              <mat-option *ngFor="let ctype of gender" [value]="ctype">
+              <mat-option *ngFor="let ctype of genderTypes" [value]="ctype">
                 {{ ctype }}
               </mat-option>
             </mat-select>
@@ -96,24 +96,24 @@
 
       </mat-card>
 
-      <mat-card>
+      <mat-card formGroupName="needs">
         <span class="color-primary mat-title">Needs</span>
 
         <div *ngFor="let n of needs" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="20px">
 
-          <mat-checkbox name="needs" required>
+          <mat-checkbox formControlName="{{n}}">
             {{ n }}
           </mat-checkbox>
 
           <mat-form-field fxFlex>
-            <input matInput formControlName="needscomments" placeholder="{{n}}" type="text">
+            <input matInput formControlName="{{n+'-comments'}}" placeholder="Comments" type="text">
           </mat-form-field>
 
         </div>
 
       </mat-card>
 
-      <button fxFlexAlign="end" mat-raised-button color="primary">Submit Form</button>
+      <button fxFlexAlign="end" mat-raised-button color="primary" [disabled]="!requestForm.valid">Submit Form</button>
     </form>
   </div>
 </app-navbar>

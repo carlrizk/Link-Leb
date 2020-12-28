@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AboutusPageComponent } from './aboutus-page/aboutus-page.component';
-import { DetailsPageComponent } from './details-page/details-page.component';
+import { AboutusPageComponent } from './pages/aboutus-page/aboutus-page.component';
+import { DetailsPageComponent } from './pages/details-page/details-page.component';
 import { LoggedInGuard } from './guards/logged-in.guard';
 import { NotLoggedInGuard } from './guards/not-logged-in.guard';
-import { HomePageComponent } from './home-page/home-page.component';
-import { LoginPageComponent } from './login-page/login-page.component';
-import { PartnersPageComponent } from './partners-page/partners-page.component';
-import { ProfilePageComponent } from './profile-page/profile-page.component';
-import { RequestformPageComponent } from './requestform-page/requestform-page.component';
-import { RequestsPageComponent } from './requests-page/requests-page.component';
+import { HomePageComponent } from './pages/home-page/home-page.component';
+import { LoginPageComponent } from './pages/login-page/login-page.component';
+import { PartnersPageComponent } from './pages/partners-page/partners-page.component';
+import { ProfilePageComponent } from './pages/profile-page/profile-page.component';
+import { RequestformPageComponent } from './pages/requestform-page/requestform-page.component';
+import { RequestsPageComponent } from './pages/requests-page/requests-page.component';
 import { UserResolver } from './resolvers/user.resolver';
 
 const routes: Routes = [
