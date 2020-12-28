@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
-import { Request } from 'src/app/common/models/request.model';
 
 @Component({
   selector: 'app-requests-table-panel',
@@ -10,7 +9,7 @@ import { Request } from 'src/app/common/models/request.model';
 export class RequestsTablePanelComponent implements OnInit {
 
   @Input() title = 'Placeholder Title';
-  @Input() requests: Request[] = [Request.Nil];
+  @Input() requests: Request[] = [];
 
   displayedColumns: string[] = ['id', 'firstName', 'lastName', 'area'];
 

@@ -1,7 +1,7 @@
 import { SocialMediaDto, SocialMediaTypeDto, UserDto } from "../../shared/dto/user.dto";
 import { NeedDto, NeedTypeDto, RequestDto } from "../../shared/dto/request.dto";
-import { INeed, IRequest, INeedType,RequestModel } from "./schemas/request.schema";
-import { ISocialMedia, ISocialMediaType, IUser, UserModel } from "./schemas/user.schema";
+import { INeed, IRequest, INeedType } from "./schemas/request.schema";
+import { ISocialMedia, ISocialMediaType, IUser } from "./schemas/user.schema";
 
 export default class Mapper {
 
@@ -21,15 +21,15 @@ export default class Mapper {
         const result: RequestDto = {
             id: request.id || "",
             firstName: request.firstName,
-            lastName:request.lastName ,
+            lastName: request.lastName,
             motherName: request.motherName,
             fatherName: request.fatherName,
             gender: request.gender,
-            dateOfBirth:request.dateOfBirth,
-            telNumber : request.telNumber,
+            dateOfBirth: request.dateOfBirth,
+            telNumber: request.telNumber,
             area: request.area,
             dateOfSubmit: request.dateOfSubmit,
-            Needs: request.Needs.map(sm => Mapper.MapNeed(sm))
+            needs: request.needs.map(sm => Mapper.MapNeed(sm))
         }
         return result
     }
@@ -51,7 +51,7 @@ export default class Mapper {
     }
     static MapNeed(need: INeed): NeedDto {
         const result = {
-            url: need.url,
+            comment: need.comment,
             type: Mapper.MapNeedType(need.needType)
         }
         return result;

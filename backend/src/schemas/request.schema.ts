@@ -3,7 +3,7 @@ import { Schema, Document, model } from "mongoose"
 
 interface INeed {
     needType: INeedType;
-    url: string;
+    comment: string;
 }
 
 interface INeedType extends Document {
@@ -15,16 +15,16 @@ const NeedTypeSchema = new Schema({
 })
 
 interface IRequest extends Document {
-    firstName: String,
-    lastName: String,
-    motherName: String,
-    fatherName: String,
-    gender: String,
+    firstName: string,
+    lastName: string,
+    motherName: string,
+    fatherName: string,
+    gender: string,
     dateOfBirth: Date,
-    telNumber : String,
-    area: String,
+    telNumber: string,
+    area: string,
     dateOfSubmit: Date,
-    Needs:INeed[];
+    needs: INeed[];
 }
 const RequestSchema = new Schema({
     firstName: String,
@@ -33,11 +33,14 @@ const RequestSchema = new Schema({
     fatherName: String,
     gender: String,
     dateOfBirth: Date,
-    telNumber : String,
+    telNumber: String,
     area: String,
     dateOfSubmit: Date,
-    Needs:[{
-        type:Schema.Types.ObjectId,
+    needs: [{
+        needType: {
+            type: Schema.Types.ObjectId,
+            ref: "NeedType"
+        },
         comment: String
     }]
 })

@@ -4,8 +4,8 @@ import {
   RouterStateSnapshot,
   ActivatedRouteSnapshot
 } from '@angular/router';
-import { Observable, of } from 'rxjs';
-import { User } from '../common/models/user.model';
+import { Observable } from 'rxjs';
+import { User } from '../models/user.model';
 import { UserService } from '../services/user.service';
 
 @Injectable({

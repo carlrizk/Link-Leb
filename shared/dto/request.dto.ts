@@ -1,20 +1,20 @@
 export interface RequestDto {
-    id: String,
-    firstName: String,
-    lastName: String,
-    motherName: String,
-    fatherName: String,
-    gender: String,
+    id: string,
+    firstName: string,
+    lastName: string,
+    motherName: string,
+    fatherName: string,
+    gender: string,
     dateOfBirth: Date,
-    telNumber : String,
-    area: String,
+    telNumber: string,
+    area: string,
     dateOfSubmit: Date,
-    Needs:NeedDto[];
+    needs: NeedDto[];
 }
 
 export interface NeedDto {
     type: NeedTypeDto;
-    url: string;
+    comment: string;
 }
 
 export interface NeedTypeDto {

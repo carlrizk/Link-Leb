@@ -1,5 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-import {Request, Needs, Area, Gender} from '../../common/models/request';
+import { Component, OnInit } from '@angular/core';
+import { faBookmark } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-request-detail-panel',
@@ -7,12 +7,22 @@ import {Request, Needs, Area, Gender} from '../../common/models/request';
   styleUrls: ['./request-detail-panel.component.scss']
 })
 export class RequestDetailPanelComponent implements OnInit {
-  
-  @Input() requests: Request[] = [Request.Nil];
+
+  bookrmarkIcon = faBookmark;
+
+  bookmarked = false;
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  bookmarkRequest(): void {
+    this.bookmarked = true;
+  }
+
+  unbookmarkRequest(): void {
+    this.bookmarked = false;
   }
 
 }
