@@ -34,11 +34,11 @@ router.post('/', async (req, res) => {
             telNumber: "70471512",
             area: "Beirut",
             dateOfSubmit: new Date(),
-            Needs: [{
-                type: { name: "Medication" },
+            needs: [{
+                needType: "5fe9f903bfa51b4974cb007c",
                 comment: "Antibiotique"
             }, {
-                type: { name: "Other" },
+                needType: "5fe9f903bfa51b4974cb007d",
                 comment: "Milk for Kids"
             }]
         })

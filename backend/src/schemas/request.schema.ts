@@ -7,6 +7,7 @@ interface INeed {
 }
 
 interface INeedType extends Document {
+    id: string;
     name: string;
 }
 

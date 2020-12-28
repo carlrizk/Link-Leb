@@ -24,9 +24,5 @@ router.get('/:userId', passport.authenticate("local"), (req, res) => {
         })
 })
 
-router.post('/', async (req, res) => {
-    const user = new UserModel({ username: "carl", password: "1234" })
-    res.send(await user.save())
-})
 
 export default router

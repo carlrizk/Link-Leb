@@ -18,5 +18,6 @@ export interface NeedDto {
 }
 
 export interface NeedTypeDto {
+    id: string;
     name: string;
 }
