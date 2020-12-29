@@ -11,8 +11,6 @@ import { NeedService } from './need.service';
 })
 export class RequestService {
 
-  private request: Request = null;
-
   constructor(
     private httpClient: HttpClient,
     private needService: NeedService
@@ -26,7 +24,7 @@ export class RequestService {
     );
   }
 
-  getRequest(id: string = this.request.id): Observable<Request> {
+  getRequest(id: string ): Observable<Request> {
     return this.needService.getNeedTypes().pipe(
       switchMap(_ => this.httpClient.get<RequestDto>('/api/requests/'+id).pipe(
         map(requestdtos => this.requestDto2Request(requestdtos))
