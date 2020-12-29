@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Request } from '../models/request.model';
-import { RequestDto } from '../../../../shared/dto/request.dto';
+import { RequestDto, SubmitRequestDto } from '../../../../shared/dto/request.dto';
 import { map, switchMap } from 'rxjs/operators';
 import { NeedService } from './need.service';
 
@@ -15,6 +15,10 @@ export class RequestService {
     private httpClient: HttpClient,
     private needService: NeedService
   ) { }
+
+  submitRequest(request: SubmitRequestDto): Observable<void> {
+    return this.httpClient.post<void>('api/requests/', request);
+  }
 
   getRequests(): Observable<Request[]> {
     return this.needService.getNeedTypes().pipe(
@@ -42,7 +46,7 @@ export class RequestService {
       fatherName: dto.fatherName,
       gender: dto.gender,
       dateOfBirth: dto.dateOfBirth,
-      dateOfSubmit: dto.dateOfSubmit,
+      dateOfSubmit: new Date(dto.dateOfSubmit),
       telNumber: dto.telNumber,
       area: dto.area,
       needs: dto.needs.map(need => this.needService.needDto2Need(need))

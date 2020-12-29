@@ -1,9 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AreasConfig } from 'src/app/config/area.config';
 import { GendersConfig } from 'src/app/config/gender.config';
 import { NeedType } from 'src/app/models/need.model';
+import { RequestService } from 'src/app/services/request.service';
+import { SpinnerService } from 'src/app/services/spinner.service';
+import { NeedDto, SubmitRequestDto } from '../../../../../shared/dto/request.dto';
+import { RequestformPageDialogComponent } from './requestform-page-dialog.component';
 
 @Component({
   selector: 'app-requestform-page',
@@ -17,7 +22,13 @@ export class RequestformPageComponent implements OnInit {
   area: string[] = AreasConfig;
   needTypes: Map<string, NeedType>;
 
-  constructor(private route: ActivatedRoute) {
+  constructor(
+    private route: ActivatedRoute,
+    private spinnerService: SpinnerService,
+    private requestService: RequestService,
+    private router: Router,
+    private dialog: MatDialog
+  ) {
   }
 
   ngOnInit(): void {
@@ -54,7 +65,43 @@ export class RequestformPageComponent implements OnInit {
   }
 
   onSubmit(): void {
-    console.log(this.requestForm.value);
+    const needValues = this.requestForm.get('needs').value;
+
+    const request: SubmitRequestDto = {
+      firstName: this.requestForm.get('firstname').value,
+      lastName: this.requestForm.get('lastname').value,
+      motherName: this.requestForm.get('mothername').value,
+      fatherName: this.requestForm.get('fathername').value,
+      gender: this.requestForm.get('gender').value,
+      dateOfBirth: this.requestForm.get('dateOfBirth').value,
+      telNumber: this.requestForm.get('telnum').value,
+      area: this.requestForm.get('area').value,
+      address: this.requestForm.get('address').value,
+      needs: Object.keys(needValues).filter(n => needValues[n].isNeeded).map(n => {
+        const dto: NeedDto = {
+          type: n,
+          comment: needValues[n].comments
+        };
+        return dto;
+      })
+    };
+
+    this.spinnerService.show();
+    this.requestService.submitRequest(request).subscribe(() => {
+      this.openDialog();
+    },
+      (err) => {
+        console.log(err);
+        this.spinnerService.hide();
+      },
+      () => this.spinnerService.hide()
+    );
+  }
+
+  openDialog(): void {
+    this.dialog.open(RequestformPageDialogComponent).afterClosed().subscribe(_ => {
+      this.router.navigate(['/']);
+    });
   }
 
 }
