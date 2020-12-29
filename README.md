@@ -1,5 +1,7 @@
 # Link-Leb
 
-## How to execute
+## How to run
+Create a database in MongoDB called LinkLeb  
+import the json files from /database into mongoDB
 Navigate to /frontend and run npm run start  
 Navigate to /backend and run npm run start
