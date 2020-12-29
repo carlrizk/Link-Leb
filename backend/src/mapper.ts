@@ -12,7 +12,8 @@ export default class Mapper {
             description: user.description,
             displayName: user.displayName,
             avatar: user.avatar,
-            socialMedias: user.socialMedias.map(sm => Mapper.MapSocialMedia(sm))
+            socialMedias: user.socialMedias.map(sm => Mapper.MapSocialMedia(sm)),
+            bookmarkedRequest: user.bookmarkedRequests.map(br => Mapper.MapRequest(br))
         }
         return result
     }
@@ -30,7 +31,7 @@ export default class Mapper {
             area: request.area,
             address: request.address,
             dateOfSubmit: request.dateOfSubmit,
-            needs: request.needs.map(sm => Mapper.MapNeed(sm))
+            needs: request.needs.map(sm => Mapper.MapNeed(sm)),
         }
         return result
     }
@@ -57,10 +58,6 @@ export default class Mapper {
         }
     }
 
-    static MapRequests(requests: IRequest[]): RequestDto[] {
-        return requests.map(req => Mapper.MapRequest(req));
-    }
-
     static MapSocialMedia(socialMedia: ISocialMedia): SocialMediaDto {
         return {
             url: socialMedia.url,
@@ -68,9 +65,6 @@ export default class Mapper {
         }
     }
 
-    static MapSocialMediaTypes(socialMediaTypes: ISocialMediaType[]): SocialMediaTypeDto[] {
-        return socialMediaTypes.map(smt => Mapper.MapSocialMediaType(smt));
-    }
     static MapSocialMediaType(socialMediaType: ISocialMediaType): SocialMediaTypeDto {
         return {
             id: socialMediaType._id,
@@ -86,9 +80,6 @@ export default class Mapper {
         }
     }
 
-    static MapNeedTypes(needTypes: INeedType[]): NeedTypeDto[] {
-        return needTypes.map(nt => Mapper.MapNeedType(nt))
-    }
     static MapNeedType(needType: INeedType): NeedTypeDto {
         return {
             id: needType._id,

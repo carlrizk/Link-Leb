@@ -4,7 +4,7 @@
             <mat-card-title>
                 <span class="mat-title-2">ID: {{ request.id }}</span>
             </mat-card-title>
-            <div *ngIf="bookmarked; then thenBlock else elseBlock"></div>
+            <div *ngIf="isBookmarked; then thenBlock else elseBlock"></div>
             <ng-template #elseBlock>
                 <button mat-raised-button color="primary" (click)="bookmarkRequest()">
                     <fa-icon [icon]="bookrmarkIcon"></fa-icon>

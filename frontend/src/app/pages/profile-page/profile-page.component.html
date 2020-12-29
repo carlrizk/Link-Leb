@@ -6,7 +6,7 @@
       <app-social-media-information-panel [socialMedias]="user.socialMedias"></app-social-media-information-panel>
     </div>
     <div fxFlex.gt-sm="75">
-      <app-requests-table-panel title="Accepted Requests"></app-requests-table-panel>
+      <app-requests-table-panel [requests]="Array.from(user.bookmarkedRequests.values())"></app-requests-table-panel>
     </div>
   </div>
 </app-navbar>

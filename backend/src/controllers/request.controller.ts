@@ -30,7 +30,7 @@ router.get('/', passport.authenticate('local'), (req, res) => {
                 res.status(500).send();
             }
             if (requests != null) {
-                res.send(Mapper.MapRequests(requests));
+                res.send(requests.map(request => Mapper.MapRequest(request)));
             } else {
                 res.status(404).send();
             }

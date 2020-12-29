@@ -8,6 +8,8 @@ const router = express.Router()
 router.post('/login',
     passport.authenticate("local"),
     async (req, res) => {
+        const user = req.user as IUser;
+        await user.populate('bookmarkedRequests').execPopulate()
         res.send(Mapper.MapUser(req.user as IUser))
     }
 )

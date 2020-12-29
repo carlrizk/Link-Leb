@@ -1,30 +1,30 @@
 import { IconDto } from "./icon.dto";
 
 export interface SubmitRequestDto {
-    firstName: string,
-    lastName: string,
-    motherName: string,
-    fatherName: string,
-    gender: string,
-    dateOfBirth: Date,
-    telNumber: string,
-    area: string,
-    address: string,
+    firstName: string;
+    lastName: string;
+    motherName: string;
+    fatherName: string;
+    gender: string;
+    dateOfBirth: Date;
+    telNumber: string;
+    area: string;
+    address: string;
     needs: NeedDto[];
 }
 
 export interface RequestDto {
-    id: string,
-    firstName: string,
-    lastName: string,
-    motherName: string,
-    fatherName: string,
-    gender: string,
-    dateOfBirth: Date,
-    telNumber: string,
-    area: string,
-    address: string,
-    dateOfSubmit: string,
+    id: string;
+    firstName: string;
+    lastName: string;
+    motherName: string;
+    fatherName: string;
+    gender: string;
+    dateOfBirth: Date;
+    telNumber: string;
+    area: string;
+    address: string;
+    dateOfSubmit: string;
     needs: NeedDto[];
 }
 
