@@ -9,9 +9,10 @@ import { User } from '../../models/user.model';
   styleUrls: ['./profile-page.component.scss']
 })
 export class ProfilePageComponent implements OnInit, OnDestroy {
+  Array = Array;
 
   user: User;
-  
+
   private routeSubscription: Subscription;
 
   constructor(private route: ActivatedRoute) { }

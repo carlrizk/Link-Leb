@@ -1,7 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { faBookmark } from '@fortawesome/free-solid-svg-icons';
+import { SpinnerService } from 'src/app/services/spinner.service';
+import { UserService } from 'src/app/services/user.service';
 import { Request } from '../../models/request.model';
-
 
 @Component({
   selector: 'app-request-detail-panel',
@@ -14,18 +15,45 @@ export class RequestDetailPanelComponent implements OnInit {
 
   @Input() request: Request;
 
-  bookmarked = false;
+  isBookmarked = false;
 
-  constructor() { }
+  constructor(
+    private userService: UserService,
+    private spinnerService: SpinnerService
+  ) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.isBookmarked = this.userService.isBookmarked(this.request);
+  }
 
   bookmarkRequest(): void {
-    this.bookmarked = true;
+    this.spinnerService.show();
+    this.userService.bookmark(this.request).subscribe(() => {
+      this.isBookmarked = true;
+    },
+      (err) => {
+        this.spinnerService.hide();
+        console.log(err);
+      },
+      () => {
+        this.spinnerService.hide();
+      }
+    );
   }
 
   unbookmarkRequest(): void {
-    this.bookmarked = false;
+    this.spinnerService.show();
+    this.userService.unbookmark(this.request).subscribe(() => {
+      this.isBookmarked = false;
+    },
+      (err) => {
+        this.spinnerService.hide();
+        console.log(err);
+      },
+      () => {
+        this.spinnerService.hide();
+      }
+    );
   }
 
 }

@@ -1,5 +1,6 @@
 import { Schema, Document, model } from "mongoose"
 import { IconSchema, IIcon } from "./icon.schema"
+import { IRequest } from "./request.schema"
 
 interface ISocialMedia {
     socialMediaType: ISocialMediaType;
@@ -20,9 +21,10 @@ interface IUser extends Document {
     username: string;
     password: string;
     description: string;
-    displayName: string,
-    avatar: string,
+    displayName: string;
+    avatar: string;
     socialMedias: ISocialMedia[];
+    bookmarkedRequests: IRequest[];
 }
 
 const UserSchema = new Schema({
@@ -37,6 +39,10 @@ const UserSchema = new Schema({
             ref: "SocialMediaType"
         },
         url: String,
+    }],
+    bookmarkedRequests: [{
+        type: Schema.Types.ObjectId,
+        ref: "Request"
     }]
 })
 

@@ -13,7 +13,7 @@ router.get('/', (req, res) => {
                 res.status(500).send();
             }
             if (socialMediaTypes != null) {
-                res.send(Mapper.MapSocialMediaTypes(socialMediaTypes));
+                res.send(socialMediaTypes.map(smt => Mapper.MapSocialMediaType(smt)));
             } else {
                 res.status(404).send();
             }

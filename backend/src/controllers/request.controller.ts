@@ -4,6 +4,7 @@ import passport from "passport"
 import { SubmitRequestDto } from "../../../shared/dto/request.dto"
 import Mapper from "../mapper"
 import { IRequest, RequestModel } from "../schemas/request.schema"
+import { IUser } from "../schemas/user.schema"
 
 const router = express.Router()
 
@@ -30,7 +31,7 @@ router.get('/', passport.authenticate('local'), (req, res) => {
                 res.status(500).send();
             }
             if (requests != null) {
-                res.send(Mapper.MapRequests(requests));
+                res.send(requests.map(request => Mapper.MapRequest(request)));
             } else {
                 res.status(404).send();
             }

@@ -1,4 +1,5 @@
 import { IconDto } from "./icon.dto";
+import { RequestDto } from "./request.dto";
 
 export interface UserDto {
     id: string;
@@ -7,6 +8,7 @@ export interface UserDto {
     displayName: string;
     avatar: string;
     socialMedias: SocialMediaDto[];
+    bookmarkedRequest: RequestDto[];
 }
 
 export interface SocialMediaDto {

@@ -1,4 +1,5 @@
 import { SocialMedia } from './social-media.model';
+import { Request } from './request.model';
 
 export class User {
     id: string;
@@ -7,5 +8,6 @@ export class User {
     description: string;
     avatar: string;
     socialMedias: SocialMedia[];
+    bookmarkedRequests: Map<string, Request>;
 }
 

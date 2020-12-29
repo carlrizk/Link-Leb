@@ -13,7 +13,7 @@ router.get('/', (req, res) => {
                 res.status(500).send();
             }
             if (needTypes != null) {
-                res.send(Mapper.MapNeedTypes(needTypes));
+                res.send(needTypes.map(nt => Mapper.MapNeedType(nt)));
             } else {
                 res.status(404).send();
             }
