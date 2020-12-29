@@ -2,7 +2,10 @@
     <mat-card>
         <div fxLayout="row" fxLayoutAlign="space-between">
             <mat-card-title>
-                <span class="mat-title-2 color-primary">ID: {{ request.id }}</span>
+                <p>
+                    <span class="mat-title-2 color-primary">ID: </span>
+                    <span class="mat-title-2 ">{{ request.id }}</span>
+                </p>
             </mat-card-title>
             <div *ngIf="isBookmarked; then thenBlock else elseBlock"></div>
             <ng-template #elseBlock>
