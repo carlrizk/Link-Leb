@@ -9,10 +9,11 @@ import { RequestService } from '../services/request.service';
 })
 
 export class RequestResolver implements Resolve<Request> {
-  constructor(private requestService: RequestService) { }
+  constructor(private requestService: RequestService,
+    private request: Request) { }
 
-  resolve(): Observable<Request> {
-    return this.requestService.getRequest();
+  resolve( ): Observable<Request> {
+    return this.requestService.getRequest(this.request.id);
   }
-  }
+ }
 
