@@ -2,4 +2,4 @@
 
 ## How to execute
 Navigate to /frontend and run npm run start  
-Navigate to /backend and run npm run start:dev
+Navigate to /backend and run npm run start
