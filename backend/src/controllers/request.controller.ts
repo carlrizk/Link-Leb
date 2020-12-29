@@ -4,7 +4,6 @@ import passport from "passport"
 import { SubmitRequestDto } from "../../../shared/dto/request.dto"
 import Mapper from "../mapper"
 import { IRequest, RequestModel } from "../schemas/request.schema"
-import { IUser } from "../schemas/user.schema"
 
 const router = express.Router()
 
