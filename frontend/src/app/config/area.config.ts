@@ -1,6 +1,11 @@
 const AreasConfig = [
     'Beirut',
-    'Somewhere Else'
+    'Akkar',
+    'Beqaa',
+    'Mount Lebanon',
+    'Nabatieh',
+    'North Governate',
+    'South Governate'
 ];
 
 export { AreasConfig };

@@ -2,7 +2,7 @@
     <mat-card>
         <div fxLayout="row" fxLayoutAlign="space-between">
             <mat-card-title>
-                <span class="mat-title-2">ID: {{ request.id }}</span>
+                <span class="mat-title-2 color-primary">ID: {{ request.id }}</span>
             </mat-card-title>
             <div *ngIf="isBookmarked; then thenBlock else elseBlock"></div>
             <ng-template #elseBlock>
@@ -19,31 +19,55 @@
             </ng-template>
         </div>
         <mat-card-content fxLayout="column">
-            <span class="mat-subheading-2">First Name: {{ request.firstName }}</span>
-            <span class="mat-subheading-2">Last Name: {{ request.lastName }}</span>
-            <span class="mat-subheading-2">Mother's Name: {{ request.motherName }}</span>
-            <span class="mat-subheading-2">Father's Name: {{ request.fatherName }}</span>
-            <span class="mat-subheading-2">Gender: {{ request.gender }}</span>
-            <span class="mat-subheading-2">Date Of Birth: {{ request.dateOfBirth | date}}</span>
-            <span class="mat-subheading-2">Phone Number: {{ request.telNumber }}</span>
-            <span class="mat-subheading-2">Area: {{ request.area }}</span>
+            <p>
+                <span class="mat-h2 color-primary">First Name: </span>
+                <span class="mat-h2">{{ request.firstName }}</span>
+            </p>
+            <p>
+                <span class="mat-h2 color-primary">Last Name: </span>
+                <span class="mat-h2">{{ request.lastName }}</span>
+            </p>
+            <p>
+                <span class="mat-h2 color-primary">Mother's Name: </span>
+                <span class="mat-h2">{{ request.motherName }}</span>
+            </p>
+            <p>
+                <span class="mat-h2 color-primary">Father's Name: </span>
+                <span class="mat-h2">{{ request.fatherName }}</span>
+            </p>
+            <p>
+                <span class="mat-h2 color-primary">Gender: </span>
+                <span class="mat-h2">{{ request.gender }}</span>
+            </p>
+            <p>
+                <span class="mat-h2 color-primary">Date Of Birth: </span>
+                <span class="mat-h2">{{ request.dateOfBirth | date}}</span>
+            </p>
+            <p>
+                <span class="mat-h2 color-primary">Phone Number: </span>
+                <span class="mat-h2">{{ request.telNumber }}</span>
+            </p>
+            <p>
+                <span class="mat-h2 color-primary">Area: </span>
+                <span class="mat-h2">{{ request.area }}</span>
+            </p>
             <div fxLayout="row" fxLayoutGap="20px">
-                <span class="mat-subheading-2">Address:</span>
-                <span class="mat-subheading-2" style="white-space: pre-line">{{ request.address }}</span>
+                <span class="mat-h2 color-primary">Address:</span>
+                <span class="mat-h2" style="white-space: pre-line">{{ request.address }}</span>
             </div>
         </mat-card-content>
     </mat-card>
     <mat-card fxLayout="column" fxLayoutGap="20px">
         <mat-card-title>
-            <span class="mat-title-2">Needs</span>
+            <span class="mat-title-2 color-primary">Needs</span>
         </mat-card-title>
         <mat-card-content fxLayout="column" fxLayoutGap="20px">
             <div *ngFor="let n of request.needs" fxLayout="row" fxLayoutGap="20px">
                 <div fxLayoutGap="5px">
                     <fa-icon [icon]="n.type.icon"></fa-icon>
-                    <span class="mat-subheading-2">{{ n.type.name }}</span>
+                    <span class="mat-h2 color-primary">{{ n.type.name }}</span>
                 </div>
-                <span class="mat-subheading-2">{{ n.comment }}</span>
+                <span class="mat-h2">{{ n.comment }}</span>
             </div>
         </mat-card-content>
     </mat-card>
