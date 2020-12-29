@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { faBookmark } from '@fortawesome/free-solid-svg-icons';
+import { Request } from '../../models/request.model';
+
 
 @Component({
   selector: 'app-request-detail-panel',
@@ -10,12 +12,13 @@ export class RequestDetailPanelComponent implements OnInit {
 
   bookrmarkIcon = faBookmark;
 
+  @Input() request: Request;
+
   bookmarked = false;
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   bookmarkRequest(): void {
     this.bookmarked = true;

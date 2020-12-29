@@ -5,6 +5,7 @@ import { Request } from '../models/request.model';
 import { RequestDto, SubmitRequestDto } from '../../../../shared/dto/request.dto';
 import { map, switchMap } from 'rxjs/operators';
 import { NeedService } from './need.service';
+import { DatePipe } from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
@@ -28,6 +29,14 @@ export class RequestService {
     );
   }
 
+  getRequest(id: string): Observable<Request> {
+    return this.needService.getNeedTypes().pipe(
+      switchMap(_ => this.httpClient.get<RequestDto>('/api/requests/' + id).pipe(
+        map(requestdtos => this.requestDto2Request(requestdtos))
+      ))
+    );
+  }
+
   requestDto2Request(dto: RequestDto): Request {
     return {
       id: dto.id,
@@ -40,6 +49,7 @@ export class RequestService {
       dateOfSubmit: new Date(dto.dateOfSubmit),
       telNumber: dto.telNumber,
       area: dto.area,
+      address: dto.address,
       needs: dto.needs.map(need => this.needService.needDto2Need(need))
     };
   }

@@ -23,6 +23,7 @@ export interface RequestDto {
     dateOfBirth: Date,
     telNumber: string,
     area: string,
+    address: string,
     dateOfSubmit: string,
     needs: NeedDto[];
 }

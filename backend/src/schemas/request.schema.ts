@@ -27,6 +27,7 @@ interface IRequest extends Document {
     dateOfBirth: Date,
     telNumber: string,
     area: string,
+    address: string,
     dateOfSubmit: string,
     needs: INeed[];
 }
@@ -39,6 +40,7 @@ const RequestSchema = new Schema({
     dateOfBirth: Date,
     telNumber: String,
     area: String,
+    address: String,
     dateOfSubmit: Date,
     needs: [{
         needType: {

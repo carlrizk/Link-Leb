@@ -1,8 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { Request } from '../../models/request.model';
-
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-requests-table-panel',
   templateUrl: './requests-table-panel.component.html',
@@ -17,12 +16,14 @@ export class RequestsTablePanelComponent implements OnInit {
   previousIcon = faChevronLeft;
   nextIcon = faChevronRight;
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit(): void { }
 
   viewDetails(id: string): void {
-    console.log(id);
+    this.router.navigate(['/requests/', id]);
   }
 
 }
