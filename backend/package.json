@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
-    "start:dev": "nodemon",
+    "start": "nodemon",
     "tsc": "tsc"
   },
   "author": "Carl Rizk, Karine Ismail, Rola Hadi",
