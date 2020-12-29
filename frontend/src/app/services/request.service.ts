@@ -11,7 +11,7 @@ import { NeedService } from './need.service';
 })
 export class RequestService {
 
-  private currentRequest: Request = null;
+  private currentRequest: Request ;
 
   constructor(
     private httpClient: HttpClient,

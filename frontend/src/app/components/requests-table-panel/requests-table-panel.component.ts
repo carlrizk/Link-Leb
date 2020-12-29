@@ -29,15 +29,7 @@ export class RequestsTablePanelComponent implements OnInit {
 
   viewDetails(id: string): void {
     console.log(id);
-    this.spinnerService.show();
-    this.requestService.getRequest(id).subscribe(res => {
-    this.router.navigate(["/requests/"+id]);},
-    (err: HttpErrorResponse) => {},
-      () => {
-        this.spinnerService.hide();
-      }
-    
-    )
+    this.router.navigate(["/requests/"+id]);
   }
 
 }

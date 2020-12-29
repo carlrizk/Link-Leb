@@ -15,6 +15,7 @@ import { NeedTypesResolver } from './resolvers/need-types.resolver';
 import { RequestsResolver } from './resolvers/requests.resolver';
 import { SocialMediaIconsResolver } from './resolvers/social-media-icons.resolver';
 import { UserResolver } from './resolvers/user.resolver';
+import { RequestResolver } from './resolvers/request.resolver';
 
 const routes: Routes = [
   { path: 'login', component: LoginPageComponent, canActivate: [NotLoggedInGuard] },
@@ -33,12 +34,16 @@ const routes: Routes = [
     path: 'requests', component: RequestsPageComponent, canActivate: [LoggedInGuard],
     resolve: { requests: RequestsResolver, needTypeIcons: NeedTypeIconResolver }
   },
-  { path: 'details', component: DetailsPageComponent, canActivate: [LoggedInGuard] },
+  { path: 'requests/:id', component: DetailsPageComponent, canActivate: [LoggedInGuard] ,
+    resolve: { request: RequestResolver, needTypeIcons: NeedTypeIconResolver}
+   },
   { path: '', component: HomePageComponent },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes,{
+    paramsInheritanceStrategy: 'always'
+})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
