@@ -1,4 +1,4 @@
-import { Component,  OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Request } from '../../models/request.model';
@@ -12,6 +12,7 @@ import { Request } from '../../models/request.model';
 export class DetailsPageComponent implements OnInit, OnDestroy {
 
   request: Request;
+
   private routeSubscription: Subscription;
 
   constructor(private route: ActivatedRoute) { }

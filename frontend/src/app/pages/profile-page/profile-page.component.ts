@@ -11,6 +11,7 @@ import { User } from '../../models/user.model';
 export class ProfilePageComponent implements OnInit, OnDestroy {
 
   user: User;
+  
   private routeSubscription: Subscription;
 
   constructor(private route: ActivatedRoute) { }

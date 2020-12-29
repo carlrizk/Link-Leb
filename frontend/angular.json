@@ -126,8 +126,5 @@
       }
     }
   },
-  "defaultProject": "Link-Leb",
-  "cli": {
-    "analytics": "16f811cf-54fa-4736-8810-62035cf9e0de"
-  }
+  "defaultProject": "Link-Leb"
 }

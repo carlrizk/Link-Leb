@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 import { Request } from '../models/request.model';
 import { RequestDto, SubmitRequestDto } from '../../../../shared/dto/request.dto';
 import { map, switchMap } from 'rxjs/operators';
@@ -28,14 +28,13 @@ export class RequestService {
     );
   }
 
-  getRequest(id: string ): Observable<Request> {
+  getRequest(id: string): Observable<Request> {
     return this.needService.getNeedTypes().pipe(
-      switchMap(_ => this.httpClient.get<RequestDto>('/api/requests/'+id).pipe(
+      switchMap(_ => this.httpClient.get<RequestDto>('/api/requests/' + id).pipe(
         map(requestdtos => this.requestDto2Request(requestdtos))
       ))
     );
-  
-}
+  }
 
   requestDto2Request(dto: RequestDto): Request {
     return {
