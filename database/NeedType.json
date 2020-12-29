@@ -1,0 +1,36 @@
+[
+  {
+    "_id": {
+      "$oid": "5fe9f903bfa51b4974cb007c"
+    },
+    "name": "Medication",
+    "icon": {
+      "prefix": "fas",
+      "iconName": "prescription-bottle-alt"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5fe9f903bfa51b4974cb007d"
+    },
+    "name": "Food",
+    "icon": {
+      "prefix": "fas",
+      "iconName": "hamburger"
+    }
+  },
+  {
+    "name": "Shelter",
+    "icon": {
+      "prefix": "fas",
+      "iconName": "home"
+    }
+  },
+  {
+    "name": "Rennovation",
+    "icon": {
+      "prefix": "fas",
+      "iconName": "tools"
+    }
+  }
+]

@@ -1,0 +1,26 @@
+[{
+  "_id": {
+    "$oid": "5fe88b4d9c45401ec8bb8337"
+  },
+  "username": "linkleb",
+  "password": "1234",
+  "description": "Our group project for the WEB",
+  "displayName": "Link Leb",
+  "avatar": "/assets/logo.png",
+  "socialMedias": [
+    {
+      "socialMediaType": "5fe88a539c45401ec8bb8334",
+      "url": "https://facebook.com"
+    },
+    {
+      "socialMediaType": "5fe88a539c45401ec8bb8335",
+      "url": "https://twitter.com"
+    },
+    {
+      "socialMediaType": "5fe88a539c45401ec8bb8336",
+      "url": "http://localhost:4200"
+    }
+  ],
+  "__v": 27,
+  "bookmarkedRequests": []
+}]

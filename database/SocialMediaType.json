@@ -1,0 +1,28 @@
+[{
+  "_id": {
+    "$oid": "5fe88a539c45401ec8bb8334"
+  },
+  "name": "Facebook",
+  "icon": {
+    "prefix": "fab",
+    "iconName": "facebook"
+  }
+},{
+  "_id": {
+    "$oid": "5fe88a539c45401ec8bb8335"
+  },
+  "name": "Twitter",
+  "icon": {
+    "prefix": "fab",
+    "iconName": "twitter"
+  }
+},{
+  "_id": {
+    "$oid": "5fe88a539c45401ec8bb8336"
+  },
+  "name": "Website",
+  "icon": {
+    "prefix": "fas",
+    "iconName": "globe"
+  }
+}]

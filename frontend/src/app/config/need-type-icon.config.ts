@@ -1,8 +1,10 @@
-import { faHamburger, faPrescriptionBottleAlt } from '@fortawesome/free-solid-svg-icons';
+import { faHamburger, faHome, faPrescriptionBottleAlt, faTools } from '@fortawesome/free-solid-svg-icons';
 
 const NeedTypeIconConfig = [
     faHamburger,
-    faPrescriptionBottleAlt
+    faPrescriptionBottleAlt,
+    faHome,
+    faTools
 ];
 
 export { NeedTypeIconConfig };
