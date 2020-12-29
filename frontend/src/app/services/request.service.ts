@@ -5,6 +5,7 @@ import { Request } from '../models/request.model';
 import { RequestDto, SubmitRequestDto } from '../../../../shared/dto/request.dto';
 import { map, switchMap } from 'rxjs/operators';
 import { NeedService } from './need.service';
+import { DatePipe } from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
@@ -48,6 +49,7 @@ export class RequestService {
       dateOfSubmit: new Date(dto.dateOfSubmit),
       telNumber: dto.telNumber,
       area: dto.area,
+      address: dto.address,
       needs: dto.needs.map(need => this.needService.needDto2Need(need))
     };
   }

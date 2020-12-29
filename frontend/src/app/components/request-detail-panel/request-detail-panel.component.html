@@ -1,33 +1,50 @@
-<mat-card>
-    <div fxLayout="row" fxLayoutAlign="space-between">
+<div fxLayout="column" fxLayoutGap="20px">
+    <mat-card>
+        <div fxLayout="row" fxLayoutAlign="space-between">
+            <mat-card-title>
+                <span class="mat-title-2">ID: {{ request.id }}</span>
+            </mat-card-title>
+            <div *ngIf="bookmarked; then thenBlock else elseBlock"></div>
+            <ng-template #elseBlock>
+                <button mat-raised-button color="primary" (click)="bookmarkRequest()">
+                    <fa-icon [icon]="bookrmarkIcon"></fa-icon>
+                    <span class="mat-h3" fxHide.lt-md> Bookmark</span>
+                </button>
+            </ng-template>
+            <ng-template #thenBlock>
+                <button mat-stroked-button color="primary" (click)="unbookmarkRequest()">
+                    <fa-icon [icon]="bookrmarkIcon"></fa-icon>
+                    <span class="mat-h3" fxHide.lt-md> Bookmarked</span>
+                </button>
+            </ng-template>
+        </div>
+        <mat-card-content fxLayout="column">
+            <span class="mat-subheading-2">First Name: {{ request.firstName }}</span>
+            <span class="mat-subheading-2">Last Name: {{ request.lastName }}</span>
+            <span class="mat-subheading-2">Mother's Name: {{ request.motherName }}</span>
+            <span class="mat-subheading-2">Father's Name: {{ request.fatherName }}</span>
+            <span class="mat-subheading-2">Gender: {{ request.gender }}</span>
+            <span class="mat-subheading-2">Date Of Birth: {{ request.dateOfBirth | date}}</span>
+            <span class="mat-subheading-2">Phone Number: {{ request.telNumber }}</span>
+            <span class="mat-subheading-2">Area: {{ request.area }}</span>
+            <div fxLayout="row" fxLayoutGap="20px">
+                <span class="mat-subheading-2">Address:</span>
+                <span class="mat-subheading-2" style="white-space: pre-line">{{ request.address }}</span>
+            </div>
+        </mat-card-content>
+    </mat-card>
+    <mat-card fxLayout="column" fxLayoutGap="20px">
         <mat-card-title>
-            <span class="mat-title-2">ID: </span>
+            <span class="mat-title-2">Needs</span>
         </mat-card-title>
-        <div *ngIf="bookmarked; then thenBlock else elseBlock"></div>
-        <ng-template #elseBlock>
-            <button mat-raised-button color="primary" (click)="bookmarkRequest()">
-                <fa-icon [icon]="bookrmarkIcon"></fa-icon>
-                <span class="mat-h3" fxHide.lt-md> Bookmark</span>
-            </button>
-        </ng-template>
-        <ng-template #thenBlock>
-            <button mat-stroked-button color="primary" (click)="unbookmarkRequest()">
-                <fa-icon [icon]="bookrmarkIcon"></fa-icon>
-                <span class="mat-h3" fxHide.lt-md> Bookmarked</span>
-            </button>
-        </ng-template>
-    </div>
-    <mat-card-content fxLayout="column">
-        <span class="mat-subheading-2">First Name:</span>
-        <span class="mat-subheading-2">Last Name:</span>
-        <span class="mat-subheading-2">Mother's Name:</span>
-        <span class="mat-subheading-2">Father's Name:</span>
-        <span class="mat-subheading-2">Gender:</span>
-        <span class="mat-subheading-2">Date Of Birth:</span>
-        <span class="mat-subheading-2">Phone Number:</span>
-        <span class="mat-subheading-2">Area:</span>
-        <span class="mat-subheading-2">Address:</span>
-        <span class="mat-subheading-2">Needs:</span>
-        <span class="mat-subheading-2">Needs Comments:</span>
-    </mat-card-content>
-</mat-card>
+        <mat-card-content fxLayout="column" fxLayoutGap="20px">
+            <div *ngFor="let n of request.needs" fxLayout="row" fxLayoutGap="20px">
+                <div fxLayoutGap="5px">
+                    <fa-icon [icon]="n.type.icon"></fa-icon>
+                    <span class="mat-subheading-2">{{ n.type.name }}</span>
+                </div>
+                <span class="mat-subheading-2">{{ n.comment }}</span>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>

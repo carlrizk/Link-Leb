@@ -34,9 +34,11 @@ const routes: Routes = [
     path: 'requests', component: RequestsPageComponent, canActivate: [LoggedInGuard],
     resolve: { requests: RequestsResolver, needTypeIcons: NeedTypeIconResolver }
   },
-  { path: 'requests/:id', component: DetailsPageComponent, canActivate: [LoggedInGuard] ,
-    resolve: { request: RequestResolver, needTypeIcons: NeedTypeIconResolver}
-   },
+  {
+    path: 'requests/:id', component: DetailsPageComponent,
+    canActivate: [LoggedInGuard],
+    resolve: { request: RequestResolver, needTypeIcons: NeedTypeIconResolver }
+  },
   { path: '', component: HomePageComponent },
 ];
 

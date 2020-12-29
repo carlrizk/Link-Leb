@@ -1,5 +1,5 @@
 import express from "express"
-import { CallbackError, Document } from "mongoose"
+import { CallbackError } from "mongoose"
 import passport from "passport"
 import { SubmitRequestDto } from "../../../shared/dto/request.dto"
 import Mapper from "../mapper"

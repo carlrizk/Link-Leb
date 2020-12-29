@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Resolve } from '@angular/router';
+import { ActivatedRouteSnapshot, Resolve } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Request } from '../models/request.model';
 import { RequestService } from '../services/request.service';
@@ -14,8 +14,8 @@ export class RequestResolver implements Resolve<Request> {
     private requestService: RequestService
   ) { }
 
-  resolve(): Observable<Request> {
-    return this.requestService.getRequest(this.request.id);
+  resolve(route: ActivatedRouteSnapshot): Observable<Request> {
+    return this.requestService.getRequest(route.params.id);
   }
 }
 

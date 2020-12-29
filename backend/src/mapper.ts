@@ -28,6 +28,7 @@ export default class Mapper {
             dateOfBirth: request.dateOfBirth,
             telNumber: request.telNumber,
             area: request.area,
+            address: request.address,
             dateOfSubmit: request.dateOfSubmit,
             needs: request.needs.map(sm => Mapper.MapNeed(sm))
         }
@@ -44,6 +45,7 @@ export default class Mapper {
             dateOfBirth: request.dateOfBirth,
             telNumber: request.telNumber,
             area: request.area,
+            address: request.address,
             dateOfSubmit: new Date().toUTCString(),
             needs: request.needs.map(n => Mapper.MapNeedFromDto(n))
         }

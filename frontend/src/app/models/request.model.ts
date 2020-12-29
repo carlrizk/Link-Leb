@@ -10,6 +10,7 @@ export class Request {
     dateOfBirth: Date;
     telNumber: string;
     area: string;
+    address: string;
     dateOfSubmit: Date;
     needs: Need[];
 }
